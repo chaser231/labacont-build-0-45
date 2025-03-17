@@ -1,0 +1,63 @@
+@font-face {
+	font-family: "YS Text";
+	src: url('./YS Text-Thin.woff2') format("woff2"),
+		     url('./YS Text-Thin.woff') format("woff");
+	font-weight: 100;
+	font-style: normal;
+	}
+
+@font-face {
+	font-family: "YS Text";
+	src: url('./YS Text-Light.woff2') format("woff2"),
+		     url('./YS Text-Light.woff') format("woff");
+	font-weight: 300;
+	font-style: normal;
+	}
+
+@font-face {
+	font-family: "YS Text";
+	src: url('./YS Text-Regular.woff2') format("woff2"),
+		     url('./YS Text-Regular.woff') format("woff");
+	font-weight: 400;
+	font-style: normal;
+	}
+
+@font-face {
+	font-family: "YS Text";
+	src: url('./YS Text-Medium.woff2') format("woff2"),
+		     url('./YS Text-Medium.woff') format("woff");
+	font-weight: 500;
+	font-style: normal;
+	}
+
+@font-face {
+	font-family: "YS Text";
+	src: url('./YS Text-Bold.woff2') format("woff2"),
+		     url('./YS Text-Bold.woff') format("woff");
+	font-weight: 700;
+	font-style: normal;
+	}
+
+@font-face {
+	font-family: "YS Text Cond";
+	src: url('./YS Text Cond-Black.woff2') format("woff2"),
+		     url('./YS Text Cond-Black.woff') format("woff");
+	font-weight: 700;
+	font-style: normal;
+	}
+
+@font-face {
+	font-family: "YS Text Cond";
+	src: url('./YS Text Cond-Bold.woff2') format("woff2"),
+		     url('./YS Text Cond-Bold.woff') format("woff");
+	font-weight: 500;
+	font-style: normal;
+	}
+
+@font-face {
+	font-family: "YS Text Cond";
+	src: url('./YS Text Cond-Heavy.woff2') format("woff2"),
+		     url('./YS Text Cond-Heavy.woff') format("woff");
+	font-weight: 600;
+	font-style: normal;
+	}
