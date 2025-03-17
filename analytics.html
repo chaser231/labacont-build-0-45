@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Аналитика</title>
+    <!-- Base styles -->
+    <link rel="stylesheet" href="css/base/variables.css" />
+    <link rel="stylesheet" href="css/base/typography.css" />
+    <!-- Component styles -->
+    <link rel="stylesheet" href="css/components/buttons.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/dropdowns.css" />
+    <link rel="stylesheet" href="css/components/navigation.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <!-- Page specific styles -->
+    <link rel="stylesheet" href="css/analytics.css" />
+    <!-- Scripts -->
+    <script type="module" src="js/pages/analytics.js"></script>
+  </head>
+  <body>
+    <div class="analytics">
+
+        <!-- Боковое меню -->
+        <aside class="sidebar">
+          <div class="sidebar-content">
+              <img src="assets/images/logo.png" alt="Company logo" class="logo">
+              
+              <nav class="sidebar-nav">
+                  <a href="index.html" class="nav-item">
+                      <img src="assets/images/home.png" alt="Home icon">
+                      <span>Главная</span>
+                  </a>
+                  <a href="template.html" class="nav-item">
+                      <img src="assets/images/icon-template.png" alt="Templates icon">
+                      <span>Шаблоны</span>
+                  </a>
+                  <a href="projects-library.html" class="nav-item">
+                      <img src="assets/images/icon-projects.png" alt="Projects icon">
+                      <span>Проекты</span>
+                  </a>
+                  <a href="analytics.html" class="nav-item active">
+                      <img src="assets/images/icon-analytics.png" alt="Analytics icon">
+                      <span>Аналитика</span>
+                  </a>
+                  <a href="tutorials.html" class="nav-item">
+                      <img src="assets/images/icon-tutorial.png" alt="Learning icon">
+                      <span>Обучение</span>
+                  </a>
+              </nav>
+              
+              <div class="help-button">
+                  <img src="assets/images/icon-help.png" alt="Help icon">
+                  <span>Помощь</span>
+              </div>
+          </div>
+      </aside>
+
+      <main class="main-content">
+        <!-- Верхняя панель -->
+        <header class="top-bar">
+            <a href="editor/index.html" class="create-button">
+                <span>Создать новый дизайн</span>
+                <img src="assets/images/icon-add.png" alt="Create new design icon">
+            </a>
+
+            <div class="user-controls">
+                <a href="settings-dashboard.html" class="tariff-button">
+                    <span>Тарифный план</span>
+                    <img src="assets/images/icon-premium.png" alt="Tariff plan icon">
+                </a>
+
+                <div class="user-profile">
+                    <button class="profile-button" aria-haspopup="true" data-el="button-1">
+                        <img src="assets/images/avatar.png" alt="User profile">
+                    </button>
+                    <template data-el="show">
+                        <div class="profile-dropdown">
+                          <a href="settings-dashboard.html">
+                            <button class="dropdown-item">Настройки</button>
+                          </a>
+                            <button class="dropdown-item border-top">Выход из аккаунта</button>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </header>
+
+        <section class="highlights">
+          <h1 class="section-header">Аналитика по вашим проектам</h1>
+          <div class="digit-stats">
+            <article class="stat-card projects-stats">
+              <div class="key-data">
+                <span class="stat-number">12</span>
+                <p class="stat-label">Проектов создано</p>
+              </div>
+              <img
+                src="assets/images/created-projects.png"
+                class="stat-icon"
+                alt="Projects icon"
+              />
+            </article>
+
+            <article class="stat-card banners-stats">
+              <div class="key-data">
+                <span class="stat-number">108</span>
+                <p class="stat-label">Баннеров нарисовано</p>
+              </div>
+              <img
+                src="assets/images/created-banners.png"
+                class="stat-icon"
+                alt="Banners icon"
+              />
+            </article>
+
+            <article class="stat-card campaigns-stats">
+              <div class="key-data">
+                <span class="stat-number">6</span>
+                <p class="stat-label">Кампаний запущено</p>
+              </div>
+              <img
+                src="assets/images/created-campaigns.png"
+                class="stat-icon"
+                alt="Campaigns icon"
+              />
+            </article>
+
+            <article class="stat-card pictures-stats">
+              <div class="key-data">
+                <span class="stat-number">59</span>
+                <p class="stat-label">Фото сгенерировано</p>
+              </div>
+              <img
+                src="assets/images/created-images.png"
+                class="stat-icon"
+                alt="Pictures icon"
+              />
+            </article>
+
+            <article class="stat-card campaigns-stats">
+              <div class="key-data">
+                <span class="stat-number">6</span>
+                <p class="stat-label">Кампаний запущено</p>
+              </div>
+              <img
+                src="assets/images/created-campaigns.png"
+                class="stat-icon"
+                alt="Campaigns icon"
+              />
+            </article>
+          </div>
+        </section>
+
+        <section class="filters">
+          <h2 class="section-header">Аналитика по вашим Кампаниям</h2>
+          <div class="campaign-filter-settings">
+            <div class="campaign-menu-button">
+              <button
+                class="campaign-dropdown-button"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span class="button-text campaign-selected"
+                  >Выберите кампанию</span
+                >
+                <img
+                  src="assets/images/dropdown-arrow.png"
+                  class="dropdown-arrow"
+                  alt="Dropdown arrow"
+                />
+              </button>
+              <div class="campaign-dropdown-menu" hidden>
+                <button class="campaign-option">Все кампании</button>
+                <button class="campaign-option">
+                  Faberlic на Главной Маркета
+                </button>
+                <button class="campaign-option">
+                  Huawei на MT, VK перформанс
+                </button>
+                <button class="campaign-option">
+                  Xiaomi департамент Электроника
+                </button>
+              </div>
+            </div>
+
+            <div
+              role="tablist"
+              aria-label="Analytics filters"
+              class="filter-tabs"
+            >
+              <button class="filter-button active">
+                Все данные
+              </button>
+              <button class="filter-button">
+                Просмотры
+              </button>
+              <button class="filter-button">
+                Переходы
+              </button>
+              <button class="filter-button">
+                Продолжительность сессии
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="graphs">
+          <div class="title">
+            <h3 class="graph-title">Статистика по всем кампаниям</h3>
+            <div class="legend">
+              <div class="legend-item views">
+                <span class="legend-color"></span>
+                <span class="legend-text">Просмотры</span>
+              </div>
+              <div class="legend-item clicks">
+                <span class="legend-color"></span>
+                <span class="legend-text">Переходы</span>
+              </div>
+              <div class="legend-item timespent">
+                <span class="legend-color"></span>
+                <span class="legend-text">Продолжительность сессии</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="graphics">
+            <div class="lines">
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+            </div>
+
+            <div class="date">
+              <span class="date-label">17 июля 2024</span>
+              <span class="date-label">1 августа 2024</span>
+              <span class="date-label">вчера</span>
+            </div>
+
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/690451b3-76be-44e2-b303-c7905c2f4e79?placeholderIfAbsent=true&apiKey=fe0fb26e1d394e939aeb244b03798ee8"
+              class="graph-image"
+              alt="Analytics graph"
+            />
+
+            <span class="y-axis-label y-0">0</span>
+            <span class="y-axis-label y-10">10</span>
+            <span class="y-axis-label y-50">50</span>
+            <span class="y-axis-label y-100">100</span>
+            <span class="y-axis-label y-1000">1000</span>
+            <span class="y-axis-label y-10000">10000</span>
+          </div>
+        </section>
+
+        <section class="top-campaigns">
+          <h3 class="section-title">Топ-кампании</h3>
+          <div class="top-campaigns-body">
+            <div class="columns-names">
+              <span class="column-name">КАМПАНИЯ</span>
+              <div class="right-columns">
+                <span class="column-name">ПРОСМОТРЫ</span>
+                <span class="column-name">ПЕРЕХОДЫ</span>
+              </div>
+            </div>
+
+            <div class="top-campaigns-list">
+              <article class="campaign-item">
+                <img
+                  src="assets/images/campaign-preview01.png"
+                  class="campaign-image"
+                  alt="Faberlic campaign"
+                />
+                <div class="campaign-details">
+                  <div class="campaign-main">
+                    <h4 class="campaign-title">Faberlic на Главной Маркета</h4>
+                    <div class="campaign-stats">
+                      <span class="stat-value">3,2k</span>
+                      <span class="stat-value">87</span>
+                    </div>
+                  </div>
+                  <time class="campaign-date">10 августа 2024</time>
+                </div>
+              </article>
+
+              <article class="campaign-item">
+                <img
+                  src="assets/images/campaign-preview02.png"
+                  class="campaign-image"
+                  alt="Huawei campaign"
+                />
+                <div class="campaign-details">
+                  <div class="campaign-main">
+                    <h4 class="campaign-title">Huawei на MT, VK перформанс</h4>
+                    <div class="campaign-stats">
+                      <span class="stat-value">1,7k</span>
+                      <span class="stat-value">12</span>
+                    </div>
+                  </div>
+                  <time class="campaign-date">25 июля 2024</time>
+                </div>
+              </article>
+
+              <article class="campaign-item">
+                <img
+                  src="assets/images/campaign-preview03.png"
+                  class="campaign-image"
+                  alt="Xiaomi campaign"
+                />
+                <div class="campaign-details">
+                  <div class="campaign-main">
+                    <h4 class="campaign-title">
+                      Xiaomi департамент Электроника
+                    </h4>
+                    <div class="campaign-stats">
+                      <span class="stat-value">739</span>
+                      <span class="stat-value">112</span>
+                    </div>
+                  </div>
+                  <time class="campaign-date">7 июля 2024</time>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/components/tabs.js"></script>
+    <script src="js/components/dropdown.js"></script>
+  </body>
+</html>

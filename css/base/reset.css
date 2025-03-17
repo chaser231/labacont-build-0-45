@@ -1,0 +1,64 @@
+/* Сброс стилей */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Убираем стандартные стили для списков */
+ul, ol {
+    list-style: none;
+}
+
+/* Убираем стандартные стили для ссылок */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Убираем стандартные стили для кнопок */
+button {
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Делаем изображения отзывчивыми */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Устанавливаем базовые стили для body */
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Убираем стандартные стили для input */
+input, textarea, select {
+    font: inherit;
+    color: inherit;
+    border: none;
+    background: none;
+}
+
+/* Убираем стандартные стили для fieldset и legend */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    padding: 0;
+} 

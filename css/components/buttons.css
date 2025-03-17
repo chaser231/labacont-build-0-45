@@ -1,0 +1,533 @@
+/* Базовые стили кнопок */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    gap: var(--spacing-sm);
+}
+
+/* Основные варианты */
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    border: none;
+}
+
+.btn-secondary {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+}
+
+.btn-ghost {
+    background-color: transparent;
+    color: var(--color-text-primary);
+    border: none;
+}
+
+/* Размеры */
+.btn-sm {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-sm);
+}
+
+.btn-lg {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-size-lg);
+}
+
+/* Состояния */
+.btn-primary:hover {
+    background-color: var(--color-accent-hover);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-surface-hover);
+}
+
+.btn-ghost:hover {
+    background-color: var(--color-surface);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Иконки в кнопках */
+.btn-icon {
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-circle);
+}
+
+.btn-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Группы кнопок */
+.btn-group {
+    display: inline-flex;
+    gap: var(--spacing-xs);
+}
+
+.btn-group .btn {
+    border-radius: 0;
+}
+
+.btn-group .btn:first-child {
+    border-top-left-radius: var(--border-radius-md);
+    border-bottom-left-radius: var(--border-radius-md);
+}
+
+.btn-group .btn:last-child {
+    border-top-right-radius: var(--border-radius-md);
+    border-bottom-right-radius: var(--border-radius-md);
+}
+
+/* Кнопки действий */
+.btn-success {
+    background-color: var(--color-success);
+    color: var(--color-background);
+    border: none;
+}
+
+.btn-danger {
+    background-color: var(--color-danger);
+    color: var(--color-background);
+    border: none;
+}
+
+.btn-warning {
+    background-color: var(--color-warning);
+    color: var(--color-text-primary);
+    border: none;
+}
+
+/* Анимация загрузки */
+.btn-loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: button-loading 0.6s linear infinite;
+}
+
+@keyframes button-loading {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Специальные кнопки */
+
+.create-button {
+    display: flex;
+    overflow: hidden;
+    gap: 0.875rem;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: #fde047;
+    border-radius: 1rem;
+    min-height: 46px;
+    transition: transform 0.2s ease;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.create-button:hover {
+    transform: scale(1.02);
+}
+
+.create-button img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.user-controls {
+    display: flex;
+    gap: 0.875rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 233px;
+}
+
+.tariff-button {
+    display: flex;
+    overflow: hidden;
+    gap: 0.875rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0.375rem 1.25rem;
+    border: 1px solid #404040;
+    border-radius: 1rem;
+    min-height: 46px;
+    transition: background-color 0.2s ease;
+}
+
+.tariff-button:hover {
+    background-color: #f8f8f8;
+}
+
+.tariff-button img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.user-profile {
+    position: relative;
+}
+
+.profile-button {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.profile-button img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.profile-button:focus {
+    outline: 2px solid #414141;
+    outline-offset: 2px;
+    border-radius: 50%;
+}
+
+.profile-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 0.5rem;
+    background-color: white;
+    border-radius: 0.75rem;
+    min-width: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.dropdown-item {
+    padding: 0.75rem 1rem;
+    width: 100%;
+    text-align: left;
+    font-size: 0.875rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f2f1f1;
+}
+
+.dropdown-item:focus {
+    outline: none;
+    background-color: #f2f1f1;
+}
+
+
+.filter-tabs {
+    display: flex;
+    min-width: 240px;
+    height: 50px;
+    align-items: center;
+    gap: 10px;
+    color: #414141;
+    letter-spacing: 0.3px;
+    font-size: 10px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.filter-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    min-height: 46px;
+    border-radius: 16px;
+    background-color: #ffffff;
+    color: #414141;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    background-color: #f8f8f8;
+}
+
+.filter-button.active {
+    background-color: #414141;
+    color: #ffffff;
+}
+
+/* Вкладки */
+.tab-button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    background: none;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: color var(--transition-normal);
+}
+
+.tab-button:hover {
+    color: var(--color-text-primary);
+}
+
+.tab-button.active {
+    color: var(--color-text-primary);
+    font-weight: 500;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.view-mode {
+    align-self: flex-start;
+    display: flex;
+    margin: 0;
+    align-items: center;
+    gap: 10px;
+    justify-content: start;
+  }
+  
+  .view-button {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    min-height: 45px;
+    max-width: 50px;
+    background-color: #ffffff;
+    padding: 0 25px;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+  }
+  
+  .view-icon {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+  }
+  
+  .grid-icon {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    flex-wrap: wrap;
+    width: 22px;
+    height: 22px;
+  }
+  
+  .grid-cell {
+    border-radius: 2px;
+    width: 10px;
+    height: 10px;
+    background-color: #4a4a4a;
+  }
+  
+  .list-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .list-line {
+    border-radius: 2px;
+    width: 20px;
+    height: 10px;
+    background-color: #4a4a4a;
+    margin: auto 0;
+  }
+  
+  .active-view {
+    background-color: #e5e5e5;
+  }
+  
+
+/* Search Field */
+.search-field {
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    border: 2px solid #ffffff;
+    min-width: 240px;
+    flex: 1;
+    height: 48px;
+    padding-left: 23px;
+    gap: 40px 100px;
+    font-size: 10px;
+    color: #414141;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #414141;
+    font-family: inherit;
+}
+
+.search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.search-icon {
+    width: 53px;
+    aspect-ratio: 1;
+    object-fit: contain;
+    border-radius: 14px;
+}
+
+/* Sort and Filter Controls */
+.sort-filter-controls {
+    display: flex;
+    min-width: 240px;
+    align-items: center;
+    gap: 10px;
+    margin: auto 0;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #414141;
+}
+
+.filter-menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    background-color: #ffffff;
+    align-self: stretch;
+}
+
+.filter-icon {
+    width: 25px;
+    aspect-ratio: 1;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.filter-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 4px;
+    z-index: 100;
+    padding: 8px 0;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #414141;
+    cursor: pointer;
+    border: none;
+    background: none;
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+
+.filter-option:hover {
+    background-color: #f8f8f8;
+}
+
+.filter-option.selected {
+    background-color: #f2f1f1;
+}
+
+.sort-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    min-height: 46px;
+    border-radius: 14px;
+    background-color: #ffffff;
+    color: #414141;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.sort-button:hover {
+    background-color: #f8f8f8;
+}
+
+.action-button {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.action-button:hover {
+    transform: scale(1.1);
+}

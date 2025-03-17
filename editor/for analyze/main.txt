@@ -1,0 +1,439 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.YSText-Thin {
+    font-family: "YS Text";
+    font-weight: 100;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+.YSText-Light {
+    font-family: "YS Text";
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+.YSText-Regular {
+    font-family: "YS Text";
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+.YSText-Medium {
+    font-family: "YS Text";
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+.YSText-Bold {
+    font-family: "YS Text";
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+
+@font-face {
+	font-family: "YS Text";
+	src: url('../assets/fonts/YS Text-Thin.woff2') format("woff2"),
+		     url('../assets/fonts/YS Text-Thin.woff') format("woff");
+	font-weight: 100;
+	font-style: normal;
+	}
+
+@font-face {
+	font-family: "YS Text";
+	src: url('../assets/fonts/YS Text-Light.woff2') format("woff2"),
+		     url('../assets/fonts/YS Text-Light.woff') format("woff");
+	font-weight: 300;
+	font-style: normal;
+	}
+
+@font-face {
+	font-family: "YS Text";
+	src: url('../assets/fonts/YS Text-Regular.woff2') format("woff2"),
+		     url('../assets/fonts/YS Text-Regular.woff') format("woff");
+	font-weight: 400;
+	font-style: normal;
+	}
+
+@font-face {
+	font-family: "YS Text";
+	src: url('../assets/fonts/YS Text-Medium.woff2') format("woff2"),
+		     url('../assets/fonts/YS Text-Medium.woff') format("woff");
+	font-weight: 500;
+	font-style: normal;
+	}
+
+@font-face {
+	font-family: "YS Text";
+	src: url('../assets/fonts/YS Text-Bold.woff2') format("woff2"),
+		     url('../assets/fonts/YS Text-Bold.woff') format("woff");
+	font-weight: 700;
+	font-style: normal;
+	}
+
+:root {
+    --primary-color: #FFFFFF; /* Белый - основной цвет */
+    --secondary-color: #FFFFFF; /* Белый - цвет панелей */
+    --accent-color: #FFDB4A; /* Ярко-желтый - акцентный цвет */
+    --canvas-bg: #e0e0e0; /* Серый фон для канваса */
+    --text-color: #414141; /* Темно-серый для текста */
+    --text-secondary: #414141; /* Серый для второстепенного текста */
+    --border-color: #ededed; /* Цвет границ элементов */
+    --item-hover: #e0e0e0; /* Цвет при наведении на элементы */
+    --sidebar-width: 240px; /* Ширина боковой панели */
+    --right-panel-width: 300px; /* Ширина правой панели */
+    --header-height: 56px; /* Высота верхней панели */
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Тень для элементов */
+    --transition: all 0.3s ease; /* Стандартный переход */
+    --panel-radius: 16px; /* Скругление углов панелей */
+    --font-primary: 'YS Text', 'Arial', sans-serif; /* Основной шрифт */
+    --font-secondary: 'YS Text', 'Arial', sans-serif; /* Можно использовать другой шрифт */
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    background-color: var(--canvas-bg);
+    overflow: hidden;
+}
+
+.editor-container {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr var(--right-panel-width);
+    grid-template-rows: var(--header-height) 1fr;
+    grid-template-areas:
+        "header header header"
+        "sidebar canvas right-panel";
+    height: 100vh;
+    width: 100vw;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 6px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+button:active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+button.primary-btn {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border-radius: 16px;
+}
+
+button.primary-btn:hover {
+    background-color: #ffdb4a;
+}
+
+.material-icons {
+    font-size: 20px;
+}
+
+/* Стилизация скроллбара для темной темы */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Контекстное меню */
+.context-menu {
+    position: absolute;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    overflow: hidden;
+    display: none;
+    border: 1px solid var(--border-color);
+}
+
+.context-menu-item {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    color: var(--text-color);
+}
+
+.context-menu-item:hover {
+    background-color: var(--item-hover);
+}
+
+.context-menu-item.delete {
+    color: #e74c3c;
+}
+
+/* Стили для переключателя */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Стили для элементов ввода в темной теме */
+input, select, textarea {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+/* Стили для индикатора загрузки */
+.loading-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--accent-color);
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-indicator p {
+    color: white;
+    font-size: 18px;
+}
+
+/* Стили для диалога выбора направления */
+.direction-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.direction-dialog-content {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    padding: 24px;
+    width: 400px;
+    max-width: 90%;
+}
+
+.direction-dialog h3 {
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.direction-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.direction-buttons button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 8px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.direction-buttons button:hover {
+    background-color: var(--accent-color);
+}
+
+.direction-buttons button .material-icons {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.cancel-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cancel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Модальные окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    width: 600px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.close-modal {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 8px;
+}
+
+.modal-body {
+    padding: 20px;
+}

@@ -1,0 +1,283 @@
+
+/* Main layout */
+.projects-library {
+  background-color: #f2f1f1;
+  display: flex;
+  padding: 15px;
+  gap: 15px;
+  min-height: 100vh;
+  align-items: stretch;
+}
+
+
+.projects-categories {
+  border-radius: 16px;
+  background-color: #ffffff;
+  align-self: stretch;
+  display: flex;
+  min-width: 240px;
+  margin: auto 0;
+  padding: 5px;
+  align-items: start;
+  gap: 5px;
+  justify-content: start;
+  height: 44px;
+}
+
+  
+.projects-tab {
+  display: flex;
+  border-radius: 12px;
+  background-color: #414141;
+  min-height: 34px;
+  padding: 14px 23px;
+  gap: 18px;
+  overflow: hidden;
+  color: #ffffff;
+  white-space: nowrap;
+  align-items: center;
+  align-self: stretch;
+}
+
+.favourites-tab {
+
+  color: #000000;
+  border-radius: 12px;
+  min-height: 34px;
+  padding: 12px 23px;
+  overflow: hidden;
+  align-self: stretch;
+}
+
+/* Favorites section */
+.favorites-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-h1);
+  font-size: 6rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: -5px;
+  margin-top: 50px;
+}
+
+.search-controls {
+  display: flex;
+  margin-top: 70px;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+  color: #414141;
+  letter-spacing: 0.3px;
+  flex-wrap: wrap;
+}
+
+.filter-controls {
+  display: flex;
+  min-width: 240px;
+  margin: auto 0;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+
+.empty-message {
+  color: #414141;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 200px;
+  margin-bottom: 20px;
+  font-family: "YS Text UltraCondensed_demo", sans-serif;
+  text-transform: uppercase;
+}
+
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .control-panel {
+    white-space: initial;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .menu-icon {
+    white-space: initial;
+  }
+
+  .help-icon {
+    margin-top: 40px;
+    white-space: initial;
+    display: none;
+  }
+
+  .main-content {
+    max-width: 100%;
+  }
+
+  .header-container {
+    max-width: 100%;
+  }
+
+  .projects-tab {
+    padding: 14px 20px;
+    white-space: initial;
+  }
+
+  .favourites-tab {
+    padding: 14px 20px;
+  }
+
+  .plan-button {
+    padding: 6px 20px;
+    display: none;
+  }
+
+  .section-title {
+    max-width: 100%;
+    margin-top: 40px;
+    font-size: 40px;
+  }
+
+  .search-controls {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+
+  .search-field {
+    max-width: 100%;
+  }
+
+  .filter-controls {
+    white-space: initial;
+  }
+
+  .filter-menu {
+    white-space: initial;
+  }
+
+  .sort-button {
+    padding: 10px 20px;
+    white-space: initial;
+  }
+
+  .empty-message {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .control-panel {
+    width: 97%;
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    left: -5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 100%;
+    margin-top: auto;
+    top: 651px;
+  }
+
+  .main-nav-icons {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    gap: 5px;
+    min-height: 100%;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .menu-icon {
+    margin-top: auto;
+    padding: 5px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .menu-text {
+    font-size: 8px;
+  }
+
+  .help-icon {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .create-button {
+    display: none;
+  }
+
+  .projects-categories {
+    width: 100%;
+  }
+
+  .projects-tab {
+    width: 100%;
+  }
+
+  .favourites-tab {
+    width: 100%;
+  }
+
+  .header-right {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+  }
+
+  .plan-button {
+    display: none;
+  }
+
+  .dropdown-menu {
+    position: fixed;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    top: auto;
+    min-width: auto;
+  }
+
+  .search-field {
+    padding-left: 15px;
+  }
+
+  .filter-controls {
+    width: 100%;
+  }
+
+  .filter-button {
+    width: 100%;
+  }
+
+  .sort-button {
+    width: 100%;
+  }
+}

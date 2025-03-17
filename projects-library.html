@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Библиотека проектов</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/tailwind.css">
+    <script type="module" src="js/script.js"></script>
+    <link rel="stylesheet" href="css/projects-library.css" />
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/dropdowns.css">
+  </head>
+  <body>
+    <div class="projects-library">
+      <aside class="sidebar">
+        <div class="sidebar-content">
+            <img src="assets/images/logo.png" alt="Company logo" class="logo">
+            
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <img src="assets/images/home.png" alt="Home icon">
+                    <span>Главная</span>
+                </a>
+                <a href="template.html" class="nav-item">
+                    <img src="assets/images/icon-template.png" alt="Templates icon">
+                    <span>Шаблоны</span>
+                </a>
+                <a href="projects-library.html" class="nav-item active">
+                    <img src="assets/images/icon-projects.png" alt="Projects icon">
+                    <span>Проекты</span>
+                </a>
+                <a href="analytics.html" class="nav-item">
+                    <img src="assets/images/icon-analytics.png" alt="Analytics icon">
+                    <span>Аналитика</span>
+                </a>
+                <a href="tutorials.html" class="nav-item">
+                    <img src="assets/images/icon-tutorial.png" alt="Learning icon">
+                    <span>Обучение</span>
+                </a>
+            </nav>
+            
+            <div class="help-button">
+                <img src="assets/images/icon-help.png" alt="Help icon">
+                <span>Помощь</span>
+            </div>
+        </div>
+    </aside>
+      <main class="main-content">
+        <!-- Верхняя панель -->
+        <header class="top-bar">
+            <a href="editor/index.html" class="create-button">
+                <span>Создать новый дизайн</span>
+                <img src="assets/images/icon-add.png" alt="Create new design icon">
+            </a>
+            
+            <div class="projects-categories">
+                <div class="projects-tab active-tab">Проекты</div>
+                <a href="favourites.html" class="favourites-tab">
+                  Избранные шаблоны
+                </a>
+            </div>
+
+            <div class="user-controls">
+                <a href="settings-dashboard.html" class="tariff-button">
+                    <span>Тарифный план</span>
+                    <img src="assets/images/icon-premium.png" alt="Tariff plan icon">
+                </a>
+
+                <div class="user-profile">
+                    <button class="profile-button" aria-haspopup="true" data-el="button-1">
+                        <img src="assets/images/avatar.png" alt="User profile">
+                    </button>
+                    <template data-el="show">
+                        <div class="profile-dropdown">
+                          <a href="settings-dashboard.html">
+                            <button class="dropdown-item">Настройки</button>
+                          </a>
+                            <button class="dropdown-item border-top">Выход из аккаунта</button>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </header>
+
+          <h1 class="page-title">Ваши проекты</h1>
+
+        <section class="content-body">
+          <div class="project-search-controls">
+            <div role="search" class="search-field">
+              <input
+                class="search-input"
+                type="search"
+                placeholder="Поиск по проектам"
+                aria-label="Search projects"
+              />
+              <button aria-label="Search" class="search-button">
+                <img
+                  src="assets/images/search-icon.png"
+                  class="search-icon"
+                  alt="Search"
+                />
+              </button>
+            </div>
+            <div class="sort-filter-controls">
+              <div class="filter-menu">
+                <button
+                  class="filter-button"
+                  id="filterButton"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <span class="filter-text">фильтрация</span>
+                  <img
+                    src="assets/images/filter-icon.png"
+                    class="filter-icon"
+                    alt="Filter"
+                  />
+                </button>
+                <div class="filter-dropdown" id="filterDropdown" hidden>
+                  <button class="filter-option" data-filter="recent">
+                    Недавние
+                  </button>
+                  <button class="filter-option" data-filter="date">
+                    По дате
+                  </button>
+                  <button class="filter-option" data-filter="name">
+                    По названию
+                  </button>
+                  <button class="filter-option" data-filter="size">
+                    По размеру
+                  </button>
+                  <button class="filter-option" data-filter="type">
+                    По типу
+                  </button>
+                </div>
+              </div>
+              <button class="sort-button">Сортировать</button>
+            </div>
+            <div class="view-mode">
+              <button
+                class="view-button grid-view active-view"
+                aria-label="Grid view"
+              >
+                <div class="view-icon">
+                  <div class="grid-icon">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                  </div>
+                </div>
+              </button>
+              <button class="view-button list-view" aria-label="List view">
+                <div class="view-icon">
+                  <div class="list-icon">
+                    <div class="list-line"></div>
+                    <div class="list-line"></div>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <section class="project-rows">
+            <div class="project-row">
+              <article class="project-card">
+                <div class="project-image" style="background-image: url(assets/images/img_1\ 8.jpg);"></div>
+                <div class="project-body">
+                  <div class="project-description">
+                    <time class="project-date">15 февраля 2025</time>
+                    <h2 class="project-title">
+                      <span>Авторская коллекция купажей чая Greenfield</span>
+                    </h2>
+                    <p class="project-text">
+                      Пакет баннеров для Яндекс Маркета
+                    </p>
+                    <div class="project-tags">
+                      <span class="tag">1440х300</span>
+                      <span class="tag">853х236</span>
+                      <span class="tag">1192х300</span>
+                      <span class="tag">1020х288</span>
+                      <span class="tag">1003х228</span>
+                      <span class="tag">540х225</span>
+                      <span class="tag">1000х56</span>
+                    </div>
+                  </div>
+                  <div class="project-actions">
+                    <a href="editor/index.html" class="edit-button">Редактировать</a>
+                    <button class="more-button">
+                      <img src="assets/images/delete.png" class="more-icon" alt="More options"/>
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <div class="project-image" style="background-image: url(assets/images/img_1\ 7.jpg);"></div>
+                <div class="project-body">
+                  <div class="project-description">
+                    <time class="project-date">15 февраля 2025</time>
+                    <h2 class="project-title">
+                      <span>Подарки для любителей волшебной вселенной</span>
+                    </h2>
+                    <p class="project-text">
+                      Пакет баннеров для Яндекс Маркетаи для
+                      перформанс-маркетинга
+                    </p>
+                    <div class="project-tags">
+                      <span class="tag">1440х300</span>
+                      <span class="tag">853х236</span>
+                      <span class="tag">1192х300</span>
+                      <span class="tag">1020х288</span>
+                      <span class="tag">1003х228</span>
+                      <span class="tag">540х225</span>
+                      <span class="tag">1000х56</span>
+                    </div>
+                  </div>
+                  <div class="project-actions">
+                    <a
+                      href="editor/index.html"
+                      class="edit-button"
+                    >
+                      Редактировать
+                    </a>
+                    <button class="more-button">
+                      <img
+                        src="assets/images/delete.png"
+                        class="more-icon"
+                        alt="More options"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="project-row">
+              <article class="project-card">
+                <div class="project-image" style="background-image: url(assets/images/img_1\ 3.jpg);"></div>
+                <div class="project-body">
+                  <div class="project-description">
+                    <time class="project-date">15 февраля 2025</time>
+                    <h2 class="project-title">
+                      Умные пылесосы для любых поверхностей
+                    </h2>
+                    <p class="project-text">
+                      Пакет баннеров для Яндекс Маркета
+                    </p>
+                    <div class="project-tags">
+                      <span class="tag">1440х300</span>
+                      <span class="tag">853х236</span>
+                      <span class="tag">1192х300</span>
+                      <span class="tag">1020х288</span>
+                      <span class="tag">1003х228</span>
+                      <span class="tag">540х225</span>
+                      <span class="tag">1000х56</span>
+                    </div>
+                  </div>
+                  <div class="project-actions">
+                    <a href="editor/index.html" class="edit-button">Редактировать</a>
+                    <button class="more-button">
+                      <img src="assets/images/delete.png" class="more-icon" alt="More options"/>
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <div class="project-image" style="background-image: url(assets/images/img_1\ 4.jpg);"></div>
+                <div class="project-body">
+                  <div class="project-description">
+                    <time class="project-date">15 февраля 2025</time>
+                    <h2 class="project-title">
+                      Товары для спорта на свежем воздухе
+                    </h2>
+                    <p class="project-text">
+                      Пакет баннеров для Яндекс Маркета
+                    </p>
+                    <div class="project-tags">
+                      <span class="tag">1440х300</span>
+                      <span class="tag">853х236</span>
+                      <span class="tag">1192х300</span>
+                      <span class="tag">1020х288</span>
+                      <span class="tag">1003х228</span>
+                      <span class="tag">540х225</span>
+                      <span class="tag">1000х56</span>
+                    </div>
+                  </div>
+                  <div class="project-actions">
+                    <a href="editor/index.html" class="edit-button">Редактировать</a>
+                    <button class="more-button">
+                      <img src="assets/images/delete.png" class="more-icon" alt="More options"/>
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="project-row">
+              <article class="project-card">
+                <div class="project-image" style="background-image: url(assets/images/img_1\ 6.jpg);"></div>
+                <div class="project-body">
+                  <div class="project-description">
+                    <time class="project-date">15 февраля 2025</time>
+                    <h2 class="project-title">Новая зимняя коллекция</h2>
+                    <p class="project-text">
+                      Пакет баннеров для Яндекс Маркета
+                    </p>
+                    <div class="project-tags">
+                      <span class="tag">1440х300</span>
+                      <span class="tag">853х236</span>
+                      <span class="tag">1192х300</span>
+                      <span class="tag">1020х288</span>
+                      <span class="tag">1003х228</span>
+                      <span class="tag">540х225</span>
+                      <span class="tag">1000х56</span>
+                    </div>
+                  </div>
+                  <div class="project-actions">
+                    <a href="editor/index.html"class="edit-button">Редактировать</a>
+                    <button class="more-button">
+                      <img src="assets/images/delete.png" class="more-icon" alt="More options"/>
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <div class="project-image" style="background-image: url(assets/images/img_1\ 5.jpg);"></div>
+                <div class="project-body">
+                  <div class="project-description">
+                    <time class="project-date">15 февраля 2025</time>
+                    <h2 class="project-title">
+                      <span>Строительные инструменты на все случаи жизни</span>
+                    </h2>
+                    <p class="project-text">
+                      Пакет баннеров для Яндекс Маркета
+                    </p>
+                    <div class="project-tags">
+                      <span class="tag">1440х300</span>
+                      <span class="tag">853х236</span>
+                      <span class="tag">1192х300</span>
+                      <span class="tag">1020х288</span>
+                      <span class="tag">1003х228</span>
+                      <span class="tag">540х225</span>
+                      <span class="tag">1000х56</span>
+                    </div>
+                  </div>
+                  <div class="project-actions">
+                    <a href="editor/index.html" class="edit-button">Редактировать</a>
+                    <button class="more-button">
+                      <img src="assets/images/delete.png" class="more-icon" alt="More options"/>
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="tiles-block" hidden>
+            <article class="creative-template">
+              <div class="template-container">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/53eda3b97114c9a48fa1f34504be9055c1b59352b061b5aacc42f226a761a136?placeholderIfAbsent=true&apiKey=fe0fb26e1d394e939aeb244b03798ee8"
+                  class="template-img"
+                  alt="Creative template"
+                />
+                <div class="template-actions">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/47d8e7f60bc21fcc2b880161db1e39d143534c8352674aadb64951e198decf6f?placeholderIfAbsent=true&apiKey=fe0fb26e1d394e939aeb244b03798ee8"
+                    class="favorite-icon"
+                    alt="Add to favorites"
+                  />
+                </div>
+                <h3 class="template-title">
+                  Креатив с телевизором в интерьере на светлом фоне с мягким
+                  светом
+                </h3>
+              </div>
+            </article>
+
+            <article class="creative-template">
+              <div class="template-container">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/400506e22c915d909243afa0a88768022b1dab2583c669b8416ecb1594045abf?placeholderIfAbsent=true&apiKey=fe0fb26e1d394e939aeb244b03798ee8"
+                  class="template-img"
+                  alt="Creative template"
+                />
+                <div class="template-actions">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/47d8e7f60bc21fcc2b880161db1e39d143534c8352674aadb64951e198decf6f?placeholderIfAbsent=true&apiKey=fe0fb26e1d394e939aeb244b03798ee8"
+                    class="favorite-icon"
+                    alt="Add to favorites"
+                  />
+                </div>
+                <h3 class="template-title">
+                  Креатив с телевизором в интерьере на светлом фоне с мягким
+                  светом
+                </h3>
+              </div>
+            </article>
+
+            <article class="creative-template">
+              <div class="template-container">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/14939f6f6da4a2797ab8461258d1448fd087be10e3d233775ac38ddeb9a0fc53?placeholderIfAbsent=true&apiKey=fe0fb26e1d394e939aeb244b03798ee8"
+                  class="template-img"
+                  alt="Creative template"
+                />
+                <div class="template-actions">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/47d8e7f60bc21fcc2b880161db1e39d143534c8352674aadb64951e198decf6f?placeholderIfAbsent=true&apiKey=fe0fb26e1d394e939aeb244b03798ee8"
+                    class="favorite-icon"
+                    alt="Add to favorites"
+                  />
+                </div>
+                <h3 class="template-title">
+                  Креатив с телевизором в интерьерена светлом фоне с мягким
+                  светом
+                </h3>
+              </div>
+            </article>
+
+            <article class="creative-template">
+              <div class="template-container">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/eedebff1893afc95e79929b3051344cfc2ccd1f2f0315bba5e0b07c456bb22a7?placeholderIfAbsent=true&apiKey=fe0fb26e1d394e939aeb244b03798ee8"
+                  class="template-img"
+                  alt="Creative template"
+                />
+                <div class="template-actions">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/47d8e7f60bc21fcc2b880161db1e39d143534c8352674aadb64951e198decf6f?placeholderIfAbsent=true&apiKey=fe0fb26e1d394e939aeb244b03798ee8"
+                    class="favorite-icon"
+                    alt="Add to favorites"
+                  />
+                </div>
+                <h3 class="template-title">
+                  Креатив с телевизором в интерьерена светлом фоне с мягким
+                  светом
+                </h3>
+              </div>
+            </article>
+          </section>
+        </section>
+        <section class="favourites-section"></section>
+      </main>
+    </div>
+
+    <script src="js/components/tabs.js"></script>
+    <script src="js/components/dropdown.js"></script>
+    <script src="js/components/search-filters.js"></script>
+  </body>
+</html>

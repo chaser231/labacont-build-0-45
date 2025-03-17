@@ -1,0 +1,226 @@
+/* Base styles */
+
+
+body {
+    font-family: var(--font-primary), var(--font-secondary), var(--font-h1);
+    background-color: #f4f4f5;
+    color: #404040;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dashboard-container {
+    display: flex;
+    overflow: hidden;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f4f4f5;
+    min-height: 100vh;
+}
+
+/* Main content styles */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    margin-left: 7rem;
+    width: 95%;
+    flex-grow: 0;
+    min-width: 240px;
+}
+
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .sidebar {
+        flex-direction: row;
+        height: 70px;
+        width: 97%;
+        left: -5px;
+        top: auto;
+        bottom: 15px;
+    }
+    
+    .sidebar-content {
+        flex-direction: row;
+        gap: 0.375rem;
+    }
+    
+    .logo, .help-button {
+        display: none;
+    }
+    
+    .nav-item {
+        padding: 0.375rem;
+    }
+    
+    .nav-item span {
+        font-size: 0.75rem;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        margin-bottom: 80px;
+    }
+    
+    .top-bar {
+        gap: 1.25rem;
+    }
+    
+    .tariff-button {
+        display: none;
+    }
+    
+    .welcome-banner {
+        flex-direction: column;
+        padding: 1.25rem 0.625rem;
+    }
+    
+    .banner-content h1 {
+        font-size: 1.875rem;
+        line-height: 1.25;
+    }
+    
+    .banner-content p {
+        font-size: 1rem;
+        margin-top: 0.625rem;
+    }
+    
+    .banner-promo {
+        flex-direction: column;
+        padding: 0.625rem;
+        min-width: auto;
+    }
+    
+    .promo-image img {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .promo-content {
+        width: 100%;
+    }
+    
+    .promo-content h2 {
+        font-size: 2.25rem;
+    }
+    
+    .promo-button {
+        width: 100%;
+    }
+    
+    .widgets-container {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 0.625rem;
+    }
+    
+    .widget-card {
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0.625rem;
+        height: 100px;
+        min-width: 100px;
+        width: 100px;
+    }
+    
+    .widget-card h3 {
+        font-size: 1rem;
+        line-height: 1;
+    }
+    
+    .widget-description img {
+        display: none;
+    }
+    
+    .widget-description {
+        margin-top: auto;
+        padding: 0 0.625rem;
+        font-size: 0.75rem;
+        font-weight: 300;
+        line-height: 1;
+    }
+    
+    .section-header h2 {
+        font-size: 2.25rem;
+    }
+    
+    .project-card {
+        flex-direction: column;
+        height: 700px;
+    }
+    
+    .project-image {
+        width: 100%;
+    }
+    
+    .project-details {
+        width: 100%;
+    }
+    
+    .project-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .edit-button {
+        width: 100%;
+    }
+    
+    .templates-tabs {
+        overflow-x: auto;
+    }
+    
+    .lessons-container {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 0.625rem;
+    }
+    
+    .lesson-card {
+        min-width: 240px;
+    }
+    
+    .stats-container {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 0.625rem;
+    }
+    
+    .stat-card {
+        height: 150px;
+        padding: 1.5rem;
+    }
+    
+    .stat-content {
+        height: 100%;
+        justify-content: space-between;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-title {
+        margin-top: auto;
+    }
+    
+    .analytics-charts {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .analytics-chart, .top-campaigns {
+        max-height: none;
+    }
+    
+    .scroll-indicator {
+        top: 380px;
+    }
+}

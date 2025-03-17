@@ -1,0 +1,563 @@
+/* Стилизация выпадающего списка шрифтов */
+#font-family {
+    font-family: var(--font-primary);
+    padding: 8px 12px;
+    border-radius: 12px;
+    width: 100%;
+}
+
+/* Стилизация опций для разных шрифтов */
+#font-family option[value="YS Text-Thin"] {
+    font-family: "YS Text-Thin", sans-serif;
+    font-weight: 100;
+}
+
+#font-family option[value="YS Text-Light"] {
+    font-family: "YS Text-Light", sans-serif;
+    font-weight: 300;
+}
+
+#font-family option[value="YS Text"] {
+    font-family: "YS Text", sans-serif;
+    font-weight: 400;
+}
+
+#font-family option[value="YS Text-Medium"] {
+    font-family: "YS Text-Medium", sans-serif;
+    font-weight: 500;
+}
+
+#font-family option[value="YS Text-Bold"] {
+    font-family: "YS Text-Bold", sans-serif;
+    font-weight: 700;
+}
+
+.right-sidebar {
+    grid-area: right-panel;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 16px 16px 0;
+    gap: 16px;
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+}
+
+.floating-panel {
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+}
+
+.layers-panel {
+    flex: 2; /* По умолчанию берем 2/5 доступного пространства */
+    min-height: 200px;
+}
+
+.properties-panel {
+    flex: 3; /* По умолчанию берем 3/5 доступного пространства */
+    min-height: 300px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    /*border-bottom: 1px solid var(--border-color);*/
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.panel-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.add-layer-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0;
+}
+
+.add-layer-btn:hover {
+    background-color: #ffffff;
+}
+
+.add-layer-btn .material-icons {
+    font-size: 18px;
+}
+
+.panel-content {
+    padding: 10px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* Слои */
+.layers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.layer-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-color);
+}
+
+.layer-item:hover {
+    background-color: var(--item-hover);
+}
+
+.layer-item.selected {
+    background-color: var(--border-color);
+}
+
+.layer-visibility {
+    margin-right: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.layer-name {
+    flex: 1;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text-color);
+}
+
+.layer-type-icon {
+    margin-right: 8px;
+    color: var(--text-secondary);
+}
+
+/* Добавленные стили для кнопки удаления */
+.layer-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.layer-item:hover .layer-actions {
+    opacity: 1;
+}
+
+.layer-delete-btn {
+    color: #e74c3c;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 12px;
+}
+
+.layer-delete-btn:hover {
+    background-color: rgba(231, 76, 60, 0.2);
+}
+
+/* Свойства */
+.property-group {
+    margin-bottom: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.property-group h4 {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.property-group h4::after {
+    content: 'expand_more';
+    font-family: 'Material Icons';
+    font-size: 20px;
+}
+
+.property-group.expanded h4::after {
+    content: 'expand_less';
+}
+
+.property-group-content {
+    padding: 12px;
+    display: none;
+}
+
+.property-group.expanded .property-group-content {
+    display: block;
+}
+
+.property-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    justify-content: start;
+}
+
+.property-row:last-child {
+    margin-bottom: 0;
+}
+
+.property-row label {
+    width: 80px;
+    font-size: 13px;
+    margin-left: 10px;
+    color: var(--text-secondary);
+}
+
+.property-row input[type="number"],
+.property-row input[type="text"],
+.property-row select {
+    flex: 0;
+    padding: 12px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 300;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+}
+
+.property-row input[type="color"] {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.property-row input[type="range"] {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 6px;
+    border-radius: 12px;
+    appearance: none;
+}
+
+.property-row input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    cursor: pointer;
+}
+
+.text-align-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.align-btn {
+    flex: 1;
+    padding: 6px;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+}
+
+.align-btn.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.property-btn {
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+}
+
+.property-btn:hover {
+    background-color: var(--item-hover);
+}
+
+/* Панель выравнивания */
+.alignment-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 0px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+}
+
+.alignment-panel button {
+    padding: 8px;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.alignment-panel button:hover {
+    background-color: var(--item-hover);
+}
+
+.alignment-panel button:active,
+.alignment-panel button.active {
+    background-color: var(--accent-color);
+}
+
+/* Стили для контролов обрезки */
+.clipping-controls-row {
+    align-items: center;
+}
+
+.clipping-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.clipping-controls.active {
+    background-color: rgba(33, 150, 243, 0.1);
+}
+
+.clipping-icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+.clipping-controls.active .clipping-icon {
+    color: var(--text-color);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Стили для управления фоновым изображением */
+.bg-image-controls {
+    margin-bottom: 12px;
+}
+
+.bg-image-settings {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bg-image-preview {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bg-image-top {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.preview-container {
+    width: 80px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bg-preview-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.apply-bg-btn {
+    width: 100%;
+    justify-content: center;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.apply-bg-btn:hover {
+    background-color: #ffdb4a;
+}
+
+.small-btn {
+    padding: 6px;
+    min-width: 32px;
+    height: 32px;
+}
+
+.remove-bg-btn {
+    background-color: rgba(244, 67, 54, 0.1);
+}
+
+.remove-bg-btn:hover {
+    background-color: rgba(244, 67, 54, 0.2);
+}
+
+.bg-image-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.property-row.mini {
+    margin-bottom: 8px;
+}
+
+.position-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 28px);
+    grid-template-rows: repeat(3, 28px);
+    gap: 2px;
+}
+
+.position-btn {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.position-btn .material-icons {
+    font-size: 16px;
+}
+
+.position-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.position-btn.active {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.opacity-slider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.opacity-slider input[type="range"] {
+    flex: 1;
+}
+
+#opacity-value {
+    min-width: 40px;
+    text-align: right;
+    font-size: 12px;
+}
+
+#bg-image-type {
+    width: 100%;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дашборд</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Боковое меню -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <img src="assets/images/logo.png" alt="Company logo" class="logo">
+                
+                <nav class="sidebar-nav">
+                    <a href="index.html" class="nav-item active">
+                        <img src="assets/images/home.png" alt="Home icon">
+                        <span>Главная</span>
+                    </a>
+                    <a href="template.html" class="nav-item">
+                        <img src="assets/images/icon-template.png" alt="Templates icon">
+                        <span>Шаблоны</span>
+                    </a>
+                    <a href="projects-library.html" class="nav-item">
+                        <img src="assets/images/icon-projects.png" alt="Projects icon">
+                        <span>Проекты</span>
+                    </a>
+                    <a href="analytics.html" class="nav-item">
+                        <img src="assets/images/icon-analytics.png" alt="Analytics icon">
+                        <span>Аналитика</span>
+                    </a>
+                    <a href="tutorials.html" class="nav-item">
+                        <img src="assets/images/icon-tutorial.png" alt="Learning icon">
+                        <span>Обучение</span>
+                    </a>
+                </nav>
+                
+                <div class="help-button">
+                    <img src="assets/images/icon-help.png" alt="Help icon">
+                    <span>Помощь</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Основное содержимое -->
+        <main class="main-content">
+            <!-- Верхняя панель -->
+            <header class="top-bar">
+                <a href="editor/index.html" class="create-button">
+                    <span>Создать новый дизайн</span>
+                    <img src="assets/images/icon-add.png" alt="Create new design icon">
+                </a>
+                
+                <div class="user-controls">
+                    <a href="settings-dashboard.html" class="tariff-button">
+                        <span>Тарифный план</span>
+                        <img src="assets/images/icon-premium.png" alt="Tariff plan icon">
+                    </a>
+                    
+                    <div class="user-profile">
+                        <button class="profile-button" aria-haspopup="true" data-el="button-1">
+                            <img src="assets/images/avatar.png" alt="User profile">
+                        </button>
+                        <template data-el="show">
+                            <div class="profile-dropdown">
+                                <a href="settings-dashboard.html">
+                                    <button class="dropdown-item">Настройки</button>
+                                </a>
+                                <a href="settings-dashboard.html">
+                                    <button class="dropdown-item border-top">Выход из аккаунта</button>
+                                </a>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Приветственный баннер -->
+            <section class="welcome-banner">
+                <div class="banner-content">
+                    <h1>Здравствуйте, Игорь!</h1>
+                    <p>Узнайте про последние обновления продукта</p>
+                </div>
+                
+                <div class="banner-promo">
+                    <div class="promo-image">
+                        <img src="assets/images/updatePreview.png" alt="Gender 2025 campaign image">
+                    </div>
+                    
+                    <div class="promo-content">
+                        <h2>Гендеры 2025</h2>
+                        <p>Доступны шаблоны стилистики нового ретейл-повода</p>
+                        <a href="editor/index.html" class="promo-button">
+                            <span>К шаблонам</span>
+                            <img src="assets/images/arrow.png" alt="Arrow icon">
+                        </a>
+                    </div>
+                    
+                    <div class="promo-gallery">
+                        <div class="gallery-thumbnails">
+                            <img src="assets/images/arrow-left.png" alt="Thumbnail 1">
+                            <img src="assets/images/arrow-right.png" alt="Thumbnail 2">
+                        </div>
+                        <div>
+                            <div class="pagination-title">Гендеры 2025</div>
+                            <div class="gallery-pagination">
+                                <div class="pagination-indicator active"></div>
+                                <div class="pagination-indicator"></div>
+                                <div class="pagination-indicator"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Быстрые виджеты -->
+            <section class="quick-widgets">
+                <h2>Быстрые виджеты</h2>
+                
+                <div class="widgets-container">
+                    <a href="editor/index.html" class="widget-card">
+                        <h3>Пакет баннеров</h3>
+                        <div class="widget-description">
+                            <!-- <img src="assets/images/image 126.png" alt="Banner package background"> -->
+                            <span>Креативы для Яндекс Маркета</span>
+                        </div>
+                    </a>
+                    
+                    <a href="editor/index.html" class="widget-card">
+                        <h3>Рич-контент</h3>
+                        <div class="widget-description">
+                            <!-- <img src="assets/images/image 126-1.png" alt="Rich content background"> -->
+                            <span>Инфографика для карточки товара</span>
+                        </div>
+                    </a>
+                    
+                    <a href="editor/index.html" class="widget-card">
+                        <h3>AI генерация фото</h3>
+                        <div class="widget-description">
+                            <!-- <img src="assets/images/image 126-2.png" alt="AI photo generation background"> -->
+                            <span>С использованием YandexART 2.0</span>
+                        </div>
+                    </a>
+                    
+                    <a href="editor/index.html" class="widget-card">
+                        <h3>AI улучшение фото</h3>
+                        <div class="widget-description">
+                            <!-- <img src="assets/images/image 126-3.png" alt="AI photo enhancement background"> -->
+                            <span>Расширьте или увеличьте ваше фото</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Ваши проекты -->
+            <section class="your-projects">
+                <div class="section-header">
+                    <h2>Ваши проекты</h2>
+                    <div class="project-thumbnails">
+                        <img src="assets/images/arrow-left.png" alt="Project thumbnail 1">
+                        <img src="assets/images/arrow-right.png" alt="Project thumbnail 2" class="clickable">
+                    </div>
+                </div>
+                
+                <div class="projects-slider" id="projectsSlider">
+                    <!-- Проект 1 -->
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('assets/images/img_1\ 2.jpg')"></div>
+                        <div class="project-details">
+                            <div class="project-info">
+                                <div class="project-date">15 февраля 2025</div>
+                                <div class="project-title">Стильная зимняя одежда для детей</div>
+                                <div class="project-type">Пакет баннеров для Яндекс Маркета</div>
+                                <div class="project-sizes">
+                                    <span>1440х300</span>
+                                    <span>853х236</span>
+                                    <span>1192х300</span>
+                                    <span>1020х288</span>
+                                    <span>540х225</span>
+                                    <span>1000х56</span>
+                                </div>
+                            </div>
+                            <div class="project-actions">
+                                <a href="editor/index.html" class="edit-button">Редактировать</a>
+                                <div class="options-button">
+                                    <img src="assets/images/delete.png" alt="Edit icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Проект 2 -->
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('assets/images/img_1\ 3.jpg')"></div>
+                        <div class="project-details">
+                            <div class="project-info">
+                                <div class="project-date">15 февраля 2025</div>
+                                <div class="project-title">Стильная зимняя одежда для детей</div>
+                                <div class="project-type">Пакет баннеров для Яндекс Маркета</div>
+                                <div class="project-sizes">
+                                    <span>1440х300</span>
+                                    <span>853х236</span>
+                                    <span>1192х300</span>
+                                    <span>1020х288</span>
+                                    <span>540х225</span>
+                                    <span>1000х56</span>
+                                </div>
+                            </div>
+                            <div class="project-actions">
+                                <a href="editor/index.html" class="edit-button">Редактировать</a>
+                                <div class="options-button">
+                                    <img src="assets/images/delete.png" alt="Edit icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Проект 3 -->
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('assets/images/img_1\ 6.jpg')"></div>
+                        <div class="project-details">
+                            <div class="project-info">
+                                <div class="project-date">15 февраля 2025</div>
+                                <div class="project-title">Стильная зимняя одежда для детей</div>
+                                <div class="project-type">Пакет баннеров для Яндекс Маркета</div>
+                                <div class="project-sizes">
+                                    <span>1440х300</span>
+                                    <span>853х236</span>
+                                    <span>1192х300</span>
+                                    <span>1020х288</span>
+                                    <span>540х225</span>
+                                    <span>1000х56</span>
+                                </div>
+                            </div>
+                            <div class="project-actions">
+                                <a href="editor/index.html" class="edit-button">Редактировать</a>
+                                <div class="options-button">
+                                    <img src="assets/images/delete.png" alt="Edit icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Библиотека шаблонов -->
+            <section class="templates-library">
+                <div class="section-header">
+                    <h2>Библиотека шаблонов</h2>
+                    <a href="https://www.builder.my/p/fe0fb26e1d394e939aeb244b03798ee8/2df3bfe04c1c48f286d7bde450e7a18a" class="view-all-button">
+                        <span>посмотреть все шаблоны</span>
+                        <img src="assets/images/arrow.png" alt="Arrow icon">
+                    </a>
+                </div>
+                
+                <div class="templates-tabs">
+                    <div role="tablist" aria-label="Template categories" class="tabs-container">
+                        <div role="tab" class="tab active" data-tab="sizes">Размеры</div>
+                        <div role="tab" class="tab" data-tab="creatives">Креативы</div>
+                        <div role="tab" class="tab" data-tab="photos">Фотографии</div>
+                        <div role="tab" class="tab" data-tab="shapes">Фигуры</div>
+                        <div role="tab" class="tab" data-tab="graphics">Графика</div>
+                    </div>
+                    
+                    <!-- Вкладка "Размеры" -->
+                    <div class="tab-content" id="sizes-content">
+                        <div class="templates-slider">
+                            <!-- Шаблон 1 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/template-preview01.png" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Баннер на Главной</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+                            
+                            <!-- Шаблон 2 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/template-preview02.png" alt="Web Stretch">
+                                <div class="template-info">
+                                    <div class="template-title">Растяжка веб</div>
+                                    <div class="template-size">Размер 1000x56</div>
+                                </div>
+                            </a>
+                            
+                            <!-- Шаблон 3 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/template-preview03.png" alt="Discount Carousel">
+                                <div class="template-info">
+                                    <div class="template-title">Карусель скидок</div>
+                                    <div class="template-size">Размер 280x300</div>
+                                </div>
+                            </a>
+                            
+                            <!-- Шаблон 4 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/template-preview04.png" alt="Landing Page Header">
+                                <div class="template-info">
+                                    <div class="template-title">Шапка лендинга</div>
+                                    <div class="template-size">Размер 1192x232</div>
+                                </div>
+                            </a>
+
+                            <!-- Шаблон 5 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/template-preview05.png" alt="Landing Page Header">
+                                <div class="template-info">
+                                    <div class="template-title">Шапка лендинга</div>
+                                    <div class="template-size">Размер 1192x232</div>
+                                </div>
+                            </a>
+
+                            <!-- Шаблон 6 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/template-preview03.png" alt="Landing Page Header">
+                                <div class="template-info">
+                                    <div class="template-title">Шапка лендинга</div>
+                                    <div class="template-size">Размер 1192x232</div>
+                                </div>
+                            </a>
+                            
+                            <!-- Шаблон 7 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/template-preview02.png" alt="Landing Page Header">
+                                <div class="template-info">
+                                    <div class="template-title">Шапка лендинга</div>
+                                    <div class="template-size">Размер 1192x232</div>
+                                </div>
+                            </a>
+
+                            <!-- Шаблон 8 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/template-preview01.png" alt="Landing Page Header">
+                                <div class="template-info">
+                                    <div class="template-title">Шапка лендинга</div>
+                                    <div class="template-size">Размер 1192x232</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Вкладка "Креативы" -->
+                    <div class="tab-content" id="creatives-content" style="display: none;">
+                        <div class="templates-slider">
+                            <!-- Креатив 1 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/creative-preview01.png" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Косметика</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+                            
+                            <!-- Креатив 2 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/creative-preview02.png" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Товары для дачи</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+
+                            <!-- Креатив 3 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/creative-preview03.png" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Умная техника</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+
+                            <!-- Креатив 4 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/creative-preview08.png" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Обувь</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+
+                            <!-- Креатив 5 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/creative-preview06.png" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Телевизоры</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+
+                            <!-- Креатив 6 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/creative-preview04.png" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Компьютерные кресла</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+
+                            <!-- Креатив 7 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/creative-preview05.png" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Спортивная одежда</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+
+                            <!-- Креатив 8 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/creative-preview07.png" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Телевизоры</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Вкладка "Фотографии" -->
+                    <div class="tab-content" id="photos-content" style="display: none;">
+                        <div class="templates-slider">
+                            <!-- Фотография 1 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/photo-1.jpg" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Гостиная</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+                            
+                            <!-- Фотография 2 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/photo-2.jpg" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Кухня</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+
+                            <!-- Фотография 3 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/photo-3.jpg" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Кухня</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+
+                            <!-- Фотография 4 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/photo-4.jpg" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Гостиная</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+
+                            <!-- Фотография 5 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/photo-5.jpg" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Приготовление</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+
+                            <!-- Фотография 6 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/photo-6.jpg" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Макарун</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+
+                            <!-- Фотография 7 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/photo-7.jpg" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Деловая встреча</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+
+                            <!-- Фотография 8 -->
+                            <a href="editor/index.html" class="template-card">
+                                <img src="assets/images/photo.jpg" alt="Banner on Main">
+                                <div class="template-info">
+                                    <div class="template-title">Боул поке</div>
+                                    <div class="template-size">Размер 540x225</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <img src="assets/images/arrow-right.png" alt="Scroll indicator" class="scroll-indicator">
+            </section>
+
+            <!-- Обучение -->
+            <section class="learning-section">
+                <div class="section-header">
+                    <h2>обучение</h2>
+                    <a href="tutorials.html" class="view-all-button">
+                        <span>Все уроки</span>
+                        <img src="assets/images/arrow.png" alt="Arrow icon">
+                    </a>
+                </div>
+                
+                <div class="lessons-container">
+                    <!-- Урок 1 -->
+                    <a href="tutorial.html" class="lesson-card">
+                        <div class="lesson-image">
+                            <img src="assets/images/tutorial-preview01.png" alt="First lesson thumbnail">
+                        </div>
+                        <div class="lesson-content">
+                            <div class="lesson-info">
+                                <div class="lesson-title">Самый первый и важный урок</div>
+                                <div class="lesson-description">
+                                    Введение в работу с приложением и создание своего первого дизайна с последующим экспортом файла
+                                </div>
+                            </div>
+                            <div class="lesson-duration">Статья и видео • 7 минут</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Урок 2 -->
+                    <a href="tutorial.html" class="lesson-card">
+                        <div class="lesson-image orange">
+                            <img src="assets/images/tutorial-preview02.png" alt="Design editor tools thumbnail">
+                        </div>
+                        <div class="lesson-content">
+                            <div class="lesson-info">
+                                <div class="lesson-title">Инструменты редактора дизайна</div>
+                                <div class="lesson-description">
+                                    Полное объяснение и подробные инструкции по использованию инструментов редактора дизайна с пошаговыми мануалами
+                                </div>
+                            </div>
+                            <div class="lesson-duration">Статья и видео • 30 минут</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Урок 3 -->
+                    <a href="tutorial.html" class="lesson-card">
+                        <div class="lesson-image red">
+                            <img src="assets/images/tutorial-preview03.png" alt="Insert image thumbnail">
+                        </div>
+                        <div class="lesson-content">
+                            <div class="lesson-info">
+                                <div class="lesson-title">Как вставить свое изображение</div>
+                                <div class="lesson-description">
+                                    Загружайте собственный контент для использования в своих уникальных проектах
+                                </div>
+                            </div>
+                            <div class="lesson-duration">Статья и видео • 30 минут</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Урок 4 -->
+                    <a href="tutorial.html" class="lesson-card">
+                        <div class="lesson-image">
+                            <img src="assets/images/tutorial-preview04.png" alt="Yandex Market banners guide thumbnail">
+                        </div>
+                        <div class="lesson-content">
+                            <div class="lesson-info">
+                                <div class="lesson-title">Гайд по баннерам Яндекс Маркета</div>
+                                <div class="lesson-description">
+                                    Объясняем, как работать с рекламными форматами на Яндекс Маркете в рамках корпоративной айдентики
+                                </div>
+                            </div>
+                            <div class="lesson-duration">Статья и видео • 7 минут</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Ваша статистика -->
+            <section class="stats-section">
+                <div class="section-header">
+                    <h2>Ваша статистика</h2>
+                    <a href="analytics.html" class="view-all-button">
+                        <span>Перейти к аналитике</span>
+                        <img src="assets/images/arrow.png" alt="Arrow icon">
+                    </a>
+                </div>
+                
+                <div class="stats-container">
+                    <!-- Блок статистики 1 -->
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div class="stat-number">12</div>
+                            <div class="stat-title">Проектов создано</div>
+                        </div>
+                        <img src="assets/images/created-projects.png" alt="Projects created icon">
+                    </div>
+                    
+                    <!-- Блок статистики 2 -->
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div class="stat-number">72</div>
+                            <div class="stat-title">Баннера нарисовано</div>
+                        </div>
+                        <img src="assets/images/created-banners.png" alt="Banners drawn icon">
+                    </div>
+                    
+                    <!-- Блок статистики 3 -->
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div class="stat-number">6</div>
+                            <div class="stat-title">Кампаний запущено</div>
+                        </div>
+                        <img src="assets/images/created-campaigns.png" alt="Campaigns launched icon">
+                    </div>
+                    
+                    <!-- Блок статистики 4 -->
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div class="stat-number">59</div>
+                            <div class="stat-title">Фото сгенерировано</div>
+                        </div>
+                        <img src="assets/images/created-images.png" alt="Photos generated icon">
+                    </div>
+                </div>
+                
+                <!-- Графики аналитики -->
+                <div class="analytics-charts">
+                    <!-- График эффективности кампаний -->
+                    <div class="analytics-chart">
+                        <div class="chart-header">
+                            <div class="chart-title">Эффективность всех кампаний</div>
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <div class="legend-marker"></div>
+                                    <div class="legend-label">Просмотры</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- <div class="chart-tabs">
+                            <div class="chart-tab active">Просмотры</div>
+                            <div class="chart-tab">Переходы</div>
+                            <div class="chart-tab">Продолжительность сессии</div>
+                        </div> -->
+                        
+                        <div class="chart-container">
+                            <div class="chart-axis">
+                                <div class="axis-line"></div>
+                                <div class="axis-line"></div>
+                                <div class="axis-line"></div>
+                                <div class="axis-line"></div>
+                                <div class="axis-line"></div>
+                            </div>
+                            
+                            <div class="chart-dates">
+                                <div>17 декабря 2024</div>
+                                <div>1 февраля 2025</div>
+                                <div>вчера</div>
+                            </div>
+                            
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fca32e96-68c6-4e34-8317-82727704fc3d" alt="Campaign effectiveness graph" class="chart-graph">
+                            
+                            <div class="chart-values">
+                                <div class="chart-value" style="top: 241px">0</div>
+                                <div class="chart-value" style="top: 205px">10</div>
+                                <div class="chart-value" style="top: 148px">50</div>
+                                <div class="chart-value" style="top: 90px">100</div>
+                                <div class="chart-value" style="top: 33px">1000</div>
+                                <div class="chart-value" style="top: -10px">10000</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Топ-кампании -->
+                    <div class="top-campaigns">
+                        <div class="top-campaigns-title">Топ-кампании</div>
+                        
+                        <div class="campaigns-header">
+                            <div>КАМПАНИЯ</div>
+                            <div class="campaigns-metrics">
+                                <div>ПРОСМОТРЫ</div>
+                                <div>ПЕРЕХОДЫ</div>
+                            </div>
+                        </div>
+                        
+                        <div class="campaigns-list">
+                            <!-- Кампания 1 -->
+                            <div class="campaign-item">
+                                <div class="campaign-info">
+                                    <img src="assets/images/campaign-preview01.png" alt="Faberlic campaign thumbnail">
+                                    <div class="campaign-details">
+                                        <div class="campaign-name">Faberlic на Главной Маркета</div>
+                                        <div class="campaign-date">10 августа 2024</div>
+                                    </div>
+                                </div>
+                                <div class="campaign-stats">
+                                    <div class="campaign-views">3,2k</div>
+                                    <div class="campaign-clicks">87</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Кампания 2 -->
+                            <div class="campaign-item">
+                                <div class="campaign-info">
+                                    <img src="assets/images/campaign-preview02.png" alt="Huawei campaign thumbnail">
+                                    <div class="campaign-details">
+                                        <div class="campaign-name">Huawei на MT, VK перформанс</div>
+                                        <div class="campaign-date">25 июля 2024</div>
+                                    </div>
+                                </div>
+                                <div class="campaign-stats">
+                                    <div class="campaign-views">1,7k</div>
+                                    <div class="campaign-clicks">12</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Кампания 3 -->
+                            <div class="campaign-item">
+                                <div class="campaign-info">
+                                    <img src="assets/images/campaign-preview03.png" alt="Xiaomi campaign thumbnail">
+                                    <div class="campaign-details">
+                                        <div class="campaign-name">Xiaomi департамент Электроника</div>
+                                        <div class="campaign-date">7 июля 2024</div>
+                                    </div>
+                                </div>
+                                <div class="campaign-stats">
+                                    <div class="campaign-views">739</div>
+                                    <div class="campaign-clicks">112</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/components/dropdown.js"></script>
+    <script src="js/components/tabs.js"></script>
+</body>
+</html>

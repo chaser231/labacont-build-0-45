@@ -1,0 +1,290 @@
+/* Базовый контейнер выпадающего меню */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Кнопка выпадающего меню */
+.dropdown-button {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.dropdown-button:hover {
+    background-color: var(--color-surface);
+}
+
+/* Контейнер выпадающего списка */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    margin-top: var(--spacing-xs);
+    padding: var(--spacing-xs);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+}
+
+/* Элементы выпадающего списка */
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-sm);
+    text-align: left;
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-normal);
+}
+
+.dropdown-item:hover {
+    background-color: var(--color-surface);
+}
+
+.dropdown-item.active {
+    background-color: var(--color-surface);
+    font-weight: 500;
+}
+
+/* Разделитель в выпадающем меню */
+.dropdown-divider {
+    height: 1px;
+    margin: var(--spacing-xs) 0;
+    background-color: var(--color-border);
+}
+
+/* Профиль пользователя */
+.profile-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 180px;
+    margin-top: var(--spacing-xs);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+}
+
+/* Фильтры */
+.filter-menu {
+    position: relative;
+}
+
+
+.campaign-filter-settings {
+    display: flex;
+    margin-top: 24px;
+    width: 100%;
+    align-items: center;
+    gap: 15px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+  
+  .campaign-menu-button {
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .campaign-dropdown-button {
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    min-height: 56px;
+    padding: 11px 15px;
+    align-items: center;
+    gap: 14px;
+    overflow: hidden;
+    color: rgba(65, 65, 65, 1);
+    justify-content: start;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+  
+  .campaign-dropdown-button:hover {
+    background-color: rgba(245, 245, 245, 1);
+  }
+  
+  .dropdown-arrow {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 25px;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+  }
+  
+  .campaign-dropdown-button[aria-expanded="true"] .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+  
+  .campaign-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 4px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+  }
+  
+  .campaign-option {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    color: rgba(65, 65, 65, 1);
+    transition: background-color 0.2s ease;
+  }
+  
+  .campaign-option:hover {
+    background-color: rgba(245, 245, 245, 1);
+  }
+
+.filter-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    margin-top: var(--spacing-xs);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+}
+
+.filter-option {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-sm);
+    text-align: left;
+    transition: all var(--transition-normal);
+}
+
+.filter-option:hover {
+    background-color: var(--color-surface);
+}
+
+.filter-option.selected {
+    background-color: var(--color-surface);
+    font-weight: 500;
+} 
+
+.sort-filter-controls {
+    align-self: flex-start;
+    display: flex;
+    min-width: 240px;
+    margin: 0;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    justify-content: start;
+  }
+  
+  .filter-menu {
+    border-radius: 12px;
+    background-color: #ffffff;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .filter-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0 20px;
+    color: #414141;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .filter-button:hover {
+    background-color: #f8f8f8;
+    border-radius: 14px;
+}
+  
+  .filter-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 4px;
+    z-index: 100;
+    padding: 8px 0;
+  }
+  
+  .filter-option {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #414141;
+    text-align: left;
+  }
+  
+  .filter-option:hover {
+    background-color: #f8f8f8;
+  }
+  
+  .filter-option.selected {
+    background-color: #f2f1f1;
+  }
+  
+  .filter-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 25px;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+  }

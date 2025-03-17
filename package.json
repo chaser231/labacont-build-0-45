@@ -1,0 +1,27 @@
+{
+  "name": "lcad",
+  "version": "0.0.4",
+  "description": "Дизайн-платформа для создания рекламных материалов",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "lint": "eslint js/**/*.js",
+    "lint:css": "stylelint css/**/*.css",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "design",
+    "advertising",
+    "platform",
+    "dashboard"
+  ],
+  "author": "LCAD Team",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "serve": "^14.2.1",
+    "stylelint": "^16.2.1"
+  }
+} 

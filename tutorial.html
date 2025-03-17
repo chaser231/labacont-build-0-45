@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Инструменты редактора дизайна - Обучение</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/tutorial.css" />
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/buttons.css"
+  </head>
+  <body>
+    <div class="tutorials">
+      <!-- Боковое меню -->
+      <aside class="sidebar">
+        <div class="sidebar-content">
+            <img src="assets/images/logo.png" alt="Company logo" class="logo">
+            
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <img src="assets/images/home.png" alt="Home icon">
+                    <span>Главная</span>
+                </a>
+                <a href="template.html" class="nav-item">
+                    <img src="assets/images/icon-template.png" alt="Templates icon">
+                    <span>Шаблоны</span>
+                </a>
+                <a href="projects-library.html" class="nav-item">
+                    <img src="assets/images/icon-projects.png" alt="Projects icon">
+                    <span>Проекты</span>
+                </a>
+                <a href="analytics.html" class="nav-item">
+                    <img src="assets/images/icon-analytics.png" alt="Analytics icon">
+                    <span>Аналитика</span>
+                </a>
+                <a href="tutorials.html" class="nav-item active">
+                    <img src="assets/images/icon-tutorial.png" alt="Learning icon">
+                    <span>Обучение</span>
+                </a>
+            </nav>
+            
+            <div class="help-button">
+                <img src="assets/images/icon-help.png" alt="Help icon">
+                <span>Помощь</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+      <!-- Верхняя панель -->
+      <header class="top-bar">
+          <a href="editor/index.html" class="create-button">
+              <span>Создать новый дизайн</span>
+              <img src="assets/images/icon-add.png" alt="Create new design icon">
+          </a>
+          
+          <div class="user-controls">
+              <a href="settings-dashboard.html" class="tariff-button">
+                  <span>Тарифный план</span>
+                  <img src="assets/images/icon-premium.png" alt="Tariff plan icon">
+              </a>
+              
+              <div class="user-profile">
+                  <button class="profile-button" aria-haspopup="true" data-el="button-1">
+                      <img src="assets/images/avatar.png" alt="User profile">
+                  </button>
+                  <template data-el="show">
+                      <div class="profile-dropdown">
+                          <a href="settings-dashboard.html">
+                              <button class="dropdown-item">Настройки</button>
+                          </a>
+                          <a href="settings-dashboard.html">
+                              <button class="dropdown-item border-top">Выход из аккаунта</button>
+                          </a>
+                      </div>
+                  </template>
+              </div>
+          </div>
+      </header>
+
+        <main class="content-container" data-el="div-1">
+          <div class="content-wrapper">
+            <article class="article-column">
+              <div class="article-content">
+                <nav class="breadcrumbs" aria-label="Навигация по сайту">
+                  <a
+                    href="tutorials.html"
+                    class="breadcrumb-link"
+                  >
+                    Обучение
+                  </a>
+                  <img
+                    src="assets/images/breadcrumb.png"
+                    class="breadcrumb-separator"
+                    alt=">"
+                  />
+                  <span class="breadcrumb-current"
+                    >Инструменты редактора дизайна</span
+                  >
+                </nav>
+
+                <div class="article-body">
+                  <section class="article-overview">
+                    <h1 class="article-title">Инструменты редактора дизайна</h1>
+                    <div class="article-hero">
+                      <div class="hero-image-container">
+                        <img
+                          src="assets/images/hero-banner.png"
+                          class="hero-background"
+                          alt="Фон изображения"
+                        />
+                      </div>
+                    </div>
+                    <p class="article-description">
+                      Полное объяснение и подробные инструкции по использованию
+                      инструментов редактора дизайна с пошаговыми мануалами
+                    </p>
+                  </section>
+
+                  <section class="basics-section">
+                    <h2 class="section-title">
+                      Основы работы с инструментами в редакторе дизайна
+                    </h2>
+                    <p class="section-text">
+                      Редактор дизайна — незаменимый инструмент для любого
+                      графического дизайнера или кто просто хочет быстро создать
+                      визуальный контент. В этой статье мы рассмотрим основные
+                      инструменты, доступные в большинстве популярных редакторов
+                      дизайна, и советы по их эффективному использованию.
+                    </p>
+                  </section>
+
+                  <section class="interface-section">
+                    <h2 class="section-title">
+                      Интерфейс и общие инструменты
+                    </h2>
+                    <h3 class="subsection-title">Панель инструментов</h3>
+                    <p class="section-text">
+                      Панель инструментов — это место, где собраны все основные
+                      инструменты для редактирования. Обычно она располагается
+                      слева или сверху.
+                    </p>
+                    <div class="image-gallery">
+                      <img
+                        src="assets/images/screenshot01.jpg"
+                        class="gallery-image"
+                        alt="Панель инструментов 1"
+                      />
+                      <img
+                        src="assets/images/screenshot02.jpg"
+                        class="gallery-image"
+                        alt="Панель инструментов 2"
+                      />
+                    </div>
+                  </section>
+
+                  <section class="workflow-section">
+                    <h3 class="subsection-title">Рабочая область</h3>
+                    <p class="section-text">
+                      Рабочая область — это пространство, где вы будете
+                      создавать и редактировать свои проекты. Здесь можно
+                      зуммировать, панорамировать и изменять ориентацию объектов
+                      для более точной работы.
+                    </p>
+                    <div class="image-gallery">
+                      <img
+                        src="assets/images/screenshot02.jpg"
+                        class="gallery-image"
+                        alt="Рабочая область 1"
+                      />
+                      <img
+                        src="assets/images/screenshot03.jpg"
+                        class="gallery-image"
+                        alt="Рабочая область 2"
+                      />
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </article>
+
+            <aside class="sidebar-column">
+              <div class="sidebar-content">
+                <button class="video-button">
+                  <span class="button-text">Видеоверсия урока ниже</span>
+                  <img
+                    src="assets/images/dropdown-arrow.png"
+                    class="video-icon"
+                    alt="Видео"
+                  />
+                </button>
+
+                <nav
+                  class="content-menu"
+                  role="navigation"
+                  aria-label="Содержание"
+                >
+                  <h2 class="toc-title">Содержание</h2>
+                  <ul class="menu-items" role="menu">
+                    <li class="menu-item" role="menuitem" tabindex="0">
+                      Инструменты редактора дизайна
+                    </li>
+                    <li class="menu-item" role="menuitem" tabindex="0">
+                      Основы работы с инструментами в редакторе дизайна
+                    </li>
+                    <li class="menu-item" role="menuitem" tabindex="0">
+                      Интерфейс и общие инструменты
+                    </li>
+                    <li
+                      class="menu-item menu-item-level-2"
+                      role="menuitem"
+                      tabindex="0"
+                    >
+                      Панель инструментов
+                    </li>
+                    <li
+                      class="menu-item menu-item-level-2"
+                      role="menuitem"
+                      tabindex="0"
+                    >
+                      Рабочая область
+                    </li>
+                    <li class="menu-item" role="menuitem" tabindex="0">
+                      Основные инструменты
+                    </li>
+                    <li
+                      class="menu-item menu-item-level-2"
+                      role="menuitem"
+                      tabindex="0"
+                    >
+                      Инструмент «Выделение»
+                    </li>
+                    <li
+                      class="menu-item menu-item-level-2"
+                      role="menuitem"
+                      tabindex="0"
+                    >
+                      Инструмент «Перо»
+                    </li>
+                    <li
+                      class="menu-item menu-item-level-2"
+                      role="menuitem"
+                      tabindex="0"
+                    >
+                      Инструмент «Текст»
+                    </li>
+                    <li class="menu-item" role="menuitem" tabindex="0">
+                      Продвинутая работа с инструментами
+                    </li>
+                    <li
+                      class="menu-item menu-item-level-2"
+                      role="menuitem"
+                      tabindex="0"
+                    >
+                      Направляющие и сетки
+                    </li>
+                    <li
+                      class="menu-item menu-item-level-2"
+                      role="menuitem"
+                      tabindex="0"
+                    >
+                      Работа со слоями
+                    </li>
+                    <li
+                      class="menu-item menu-item-level-2"
+                      role="menuitem"
+                      tabindex="0"
+                    >
+                      Цветовая палитра и образцы
+                    </li>
+                    <li class="menu-item" role="menuitem" tabindex="0">
+                      Заключение и дополнительные ресурсы
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </aside>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/components/dropdown.js"></script>
+    <script src="js/components/buttons.js"></script>
+  </body>
+</html>

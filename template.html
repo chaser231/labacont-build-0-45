@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Шаблоны</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/templates.css" />
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <script type="module" src="js/script.js"></script>
+  </head>
+  <body>
+    <div class="templates-library">
+      <aside class="sidebar">
+        <div class="sidebar-content">
+            <img src="assets/images/logo.png" alt="Company logo" class="logo">
+            
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <img src="assets/images/home.png" alt="Home icon">
+                    <span>Главная</span>
+                </a>
+                <a href="templates-library.html" class="nav-item active">
+                    <img src="assets/images/icon-template.png" alt="Templates icon">
+                    <span>Шаблоны</span>
+                </a>
+                <a href="projects-library.html" class="nav-item">
+                    <img src="assets/images/icon-projects.png" alt="Projects icon">
+                    <span>Проекты</span>
+                </a>
+                <a href="analytics.html" class="nav-item">
+                    <img src="assets/images/icon-analytics.png" alt="Analytics icon">
+                    <span>Аналитика</span>
+                </a>
+                <a href="tutorials.html" class="nav-item">
+                    <img src="assets/images/icon-tutorial.png" alt="Learning icon">
+                    <span>Обучение</span>
+                </a>
+            </nav>
+            
+            <div class="help-button">
+                <img src="assets/images/icon-help.png" alt="Help icon">
+                <span>Помощь</span>
+            </div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <!-- Верхняя панель -->
+        <header class="top-bar">
+            <a href="editor/index.html" class="create-button">
+                <span>Создать новый дизайн</span>
+                <img src="assets/images/icon-add.png" alt="Create new design icon">
+            </a>
+            
+            <div class="templates-categories" role="tablist">
+                <button role="tab" class="category-tab active" data-tab="sizes">Размеры</button>
+                <button role="tab" class="category-tab" data-tab="creatives">Креативы</button>
+                <button role="tab" class="category-tab" data-tab="photos">Фото</button>
+                <button role="tab" class="category-tab" data-tab="recent">Последние</button>
+            </div>
+
+            <div class="user-controls">
+                <a href="settings-dashboard.html" class="tariff-button">
+                    <span>Тарифный план</span>
+                    <img src="assets/images/icon-premium.png" alt="Tariff plan icon">
+                </a>
+                
+                <div class="user-profile">
+                    <button class="profile-button" aria-haspopup="true" data-el="button-1">
+                        <img src="assets/images/avatar.png" alt="User profile">
+                    </button>
+                    <template data-el="show">
+                        <div class="profile-dropdown">
+                          <a href="settings-dashboard.html">
+                            <button class="dropdown-item">Настройки</button>
+                          </a>
+                            <button class="dropdown-item border-top">Выход из аккаунта</button>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            
+            <!-- Мобильная версия категорий -->
+            <div class="mobile-categories" role="tablist">
+                <button role="tab" class="mobile-tab-active" id="mobileCategoryBtn">
+                    <span id="currentCategory">Размеры</span>
+                    <img src="assets/images/dropdown-arrow.png" alt="Dropdown icon" class="dropdown-icon">
+                </button>
+                <div class="mobile-dropdown" id="mobileDropdown" hidden>
+                    <button role="tab" class="mobile-tab" data-tab="sizes">Размеры</button>
+                    <button role="tab" class="mobile-tab" data-tab="creatives">Креативы</button>
+                    <button role="tab" class="mobile-tab" data-tab="photos">Фото</button>
+                    <button role="tab" class="mobile-tab" data-tab="recent">Последние</button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Заголовок страницы -->
+        <h1 class="page-title">
+            <span class="title" id="titleSizes">Шаблоны размеров</span>
+            <span class="title" id="titleCreatives" style="display: none;">Шаблоны креативов</span>
+            <span class="title" id="titlePhotos" style="display: none;">Библиотека фотографий</span>
+            <span class="title" id="titleRecent" style="display: none;">Последние шаблоны</span>
+        </h1>
+
+        <!-- Секция шаблонов размеров -->
+        <section id="sectionSizes" class="content-body">
+            <div class="template-search-controls">
+                <div class="filter-tabs">
+                    <button class="filter-button active">Яндекс Маркет</button>
+                    <button class="filter-button">Перформанс</button>
+                    <button class="filter-button">Соцсети</button>
+                    <button class="filter-button">Рич-контент</button>
+                </div>
+                
+                <div role="search" class="search-field">
+                    <input class="search-input" type="search" placeholder="Поиск по шаблонам" aria-label="Search templates">
+                    <button aria-label="Search" class="search-button">
+                        <img src="assets/images/search-icon.png" class="search-icon" alt="Search">
+                    </button>
+                </div>
+                
+                <div class="sort-filter-controls">
+                    <div class="filter-menu">
+                        <button class="filter-button" id="categoryButton" aria-haspopup="true" aria-expanded="false">
+                            <span class="filter-text">Яндекс Маркет</span>
+                            <img src="assets/images/dropdown-arrow.png" class="filter-icon" alt="Filter">
+                        </button>
+                        <div class="filter-dropdown" id="categoryDropdown" hidden>
+                            <button class="filter-option" data-category="Яндекс Маркет">Яндекс Маркет</button>
+                            <button class="filter-option" data-category="Перформанс">Перформанс</button>
+                            <button class="filter-option" data-category="Соцсети">Соцсети</button>
+                            <button class="filter-option" data-category="Рич-контент">Рич-контент</button>
+                            <button class="filter-option" data-category="Яндекс Go">Яндекс Go</button>
+                        </div>
+                    </div>
+                    <button class="sort-button">Сортировать</button>
+                </div>
+            </div>
+
+            <div class="template-rows">
+                <div class="template-row">
+                    <!-- Шаблон 1 -->
+                    <a href="editor/index.html" class="template-card">
+                        <div class="template-preview" style="background-image: url(assets/images/template-1.jpg);">
+                            <div class="template-header">
+                                <div class="size-tags">
+                                    <span class="tag">334x212</span>
+                                    <span class="tag">242x154</span>
+                                </div>
+                                <div class="template-actions">
+                                    <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                    <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                                </div>
+                            </div>
+                            <h2 class="template-title">Карусель акций</h2>
+                        </div>
+                    </a>
+                    
+                    <!-- Шаблон 2 -->
+                    <a href="editor/index.html" class="template-card">
+                        <div class="template-preview" style="background-image: url(assets/images/template-2.jpg);">
+                            <div class="template-header">
+                                <div class="size-tags">
+                                    <span class="tag">334x212</span>
+                                    <span class="tag">242x154</span>
+                                </div>
+                                <div class="template-actions">
+                                    <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                    <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                                </div>
+                            </div>
+                            <h2 class="template-title">Карусель акций</h2>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="template-row">
+                    <!-- Шаблон 3 -->
+                    <a href="editor/index.html" class="template-card">
+                        <div class="template-preview" style="background-image: url(assets/images/template-3.jpg);">
+                            <div class="template-header">
+                                <div class="size-tags">
+                                    <span class="tag">1440х300</span>
+                                    <span class="tag">853х236</span>
+                                </div>
+                                <div class="template-actions">
+                                    <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                    <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                                </div>
+                            </div>
+                            <h2 class="template-title">Баннер на главной</h2>
+                        </div>
+                    </a>
+                    
+                    <!-- Шаблон 4 -->
+                    <a href="editor/index.html" class="template-card">
+                        <div class="template-preview" style="background-image: url(assets/images/template-4.jpg);">
+                            <div class="template-header">
+                                <div class="size-tags">
+                                    <span class="tag">1192x300</span>
+                                    <span class="tag">1020x288</span>
+                                </div>
+                                <div class="template-actions">
+                                    <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                    <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                                </div>
+                            </div>
+                            <h2 class="template-title">Шапка лендинга</h2>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="template-row">
+                    <!-- Шаблон 5 -->
+                    <a href="editor/index.html" class="template-card">
+                        <div class="template-preview" style="background-image: url(assets/images/template-5.jpg);">
+                            <div class="template-header">
+                                <div class="size-tags">
+                                    <span class="tag">1440х300</span>
+                                    <span class="tag">853х236</span>
+                                </div>
+                                <div class="template-actions">
+                                    <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                    <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                                </div>
+                            </div>
+                            <h2 class="template-title">Баннер на главной</h2>
+                        </div>
+                    </a>
+                    
+                    <!-- Шаблон 6 -->
+                    <a href="editor/index.html" class="template-card">
+                        <div class="template-preview" style="background-image: url(assets/images/template-6.jpg);">
+                            <div class="template-header">
+                                <div class="size-tags">
+                                    <span class="tag">1192x300</span>
+                                    <span class="tag">1020x288</span>
+                                </div>
+                                <div class="template-actions">
+                                    <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                    <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                                </div>
+                            </div>
+                            <h2 class="template-title">Шапка лендинга</h2>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="template-row">
+                    <!-- Шаблон 7 -->
+                    <a href="editor/index.html" class="template-card">
+                        <div class="template-preview" style="background-image: url(assets/images/template-7.jpg);">
+                            <div class="template-header">
+                                <div class="size-tags">
+                                    <span class="tag">1440х300</span>
+                                    <span class="tag">853х236</span>
+                                </div>
+                                <div class="template-actions">
+                                    <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                    <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                                </div>
+                            </div>
+                            <h2 class="template-title">Баннер на главной</h2>
+                        </div>
+                    </a>
+                    
+                    <!-- Шаблон 8 -->
+                    <a href="editor/index.html" class="template-card">
+                        <div class="template-preview" style="background-image: url(assets/images/template-8.jpg);">
+                            <div class="template-header">
+                                <div class="size-tags">
+                                    <span class="tag">1192x300</span>
+                                    <span class="tag">1020x288</span>
+                                </div>
+                                <div class="template-actions">
+                                    <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                    <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                                </div>
+                            </div>
+                            <h2 class="template-title">Шапка лендинга</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция креативов -->
+        <section id="sectionCreatives" class="content-body" style="display: none;">
+            <div class="template-search-controls">
+                <!-- Аналогичные элементы управления для креативов -->
+                <div role="search" class="search-field">
+                    <input class="search-input" type="search" placeholder="Поиск по креативам" aria-label="Search creatives">
+                    <button aria-label="Search" class="search-button">
+                        <img src="assets/images/search-icon.png" class="search-icon" alt="Search">
+                    </button>
+                </div>
+                
+                <div class="sort-filter-controls">
+                    <div class="filter-menu">
+                        <button class="filter-button" id="creativeTypeButton" aria-haspopup="true" aria-expanded="false">
+                            <span class="filter-text">Тип креатива</span>
+                            <img src="assets/images/dropdown-arrow.png" class="filter-icon" alt="Filter">
+                        </button>
+                        <div class="filter-dropdown" id="creativeTypeDropdown" hidden>
+                            <button class="filter-option" data-type="Все типы">Все типы</button>
+                            <button class="filter-option" data-type="Фон">Фон</button>
+                            <button class="filter-option" data-type="Товар">Товар</button>
+                            <button class="filter-option" data-type="Бейдж">Бейдж</button>
+                        </div>
+                    </div>
+                    <button class="sort-button">Сортировать</button>
+                </div>
+            </div>
+
+            <div class="creative-grid">
+                <!-- Креатив 1 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-1.jpg" alt="Креатив с телевизором" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Фон</span>
+                                <span class="tag">Товар</span>
+                                <span class="tag">Бейдж</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив с телевизором в интерьере на светлом фоне с мягким светом</h2>
+                    </div>
+                </a>
+                
+                <!-- Креатив 2 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-2.jpg" alt="Креатив с товаром" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Товар</span>
+                                <span class="tag">Промо</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив с товаром на контрастном фоне с акцентной надписью</h2>
+                    </div>
+                </a>
+                
+                <!-- Креатив 3 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-3.jpg" alt="Креатив с фоном" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Фон</span>
+                                <span class="tag">Абстракция</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив с абстрактным фоном и градиентной заливкой</h2>
+                    </div>
+                </a>
+                
+                <!-- Креатив 4 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-4.jpg" alt="Креатив с бейджем" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Бейдж</span>
+                                <span class="tag">Скидка</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив со скидочным бейджем и акцентной типографикой</h2>
+                    </div>
+                </a>
+
+                <!-- Креатив 5 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-5.jpg" alt="Креатив с телевизором" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Фон</span>
+                                <span class="tag">Товар</span>
+                                <span class="tag">Бейдж</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив с телевизором в интерьере на светлом фоне с мягким светом</h2>
+                    </div>
+                </a>
+                
+                <!-- Креатив 6 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-6.jpg" alt="Креатив с товаром" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Товар</span>
+                                <span class="tag">Промо</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив с товаром на контрастном фоне с акцентной надписью</h2>
+                    </div>
+                </a>
+                
+                <!-- Креатив 7 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-7.jpg" alt="Креатив с фоном" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Фон</span>
+                                <span class="tag">Абстракция</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив с абстрактным фоном и градиентной заливкой</h2>
+                    </div>
+                </a>
+                
+                <!-- Креатив 8 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-8.jpg" alt="Креатив с бейджем" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Бейдж</span>
+                                <span class="tag">Скидка</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив со скидочным бейджем и акцентной типографикой</h2>
+                    </div>
+                </a>
+
+                <!-- Креатив 8 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-8.jpg" alt="Креатив с бейджем" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Бейдж</span>
+                                <span class="tag">Скидка</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив со скидочным бейджем и акцентной типографикой</h2>
+                    </div>
+                </a>
+
+                                <!-- Креатив 1 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-1.jpg" alt="Креатив с телевизором" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Фон</span>
+                                <span class="tag">Товар</span>
+                                <span class="tag">Бейдж</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив с телевизором в интерьере на светлом фоне с мягким светом</h2>
+                    </div>
+                </a>
+                
+                <!-- Креатив 2 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-2.jpg" alt="Креатив с товаром" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Товар</span>
+                                <span class="tag">Промо</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив с товаром на контрастном фоне с акцентной надписью</h2>
+                    </div>
+                </a>
+                
+                <!-- Креатив 3 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-3.jpg" alt="Креатив с фоном" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Фон</span>
+                                <span class="tag">Абстракция</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив с абстрактным фоном и градиентной заливкой</h2>
+                    </div>
+                </a>
+                
+                <!-- Креатив 4 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-4.jpg" alt="Креатив с бейджем" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Бейдж</span>
+                                <span class="tag">Скидка</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив со скидочным бейджем и акцентной типографикой</h2>
+                    </div>
+                </a>
+
+                <!-- Креатив 5 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-5.jpg" alt="Креатив с телевизором" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Фон</span>
+                                <span class="tag">Товар</span>
+                                <span class="tag">Бейдж</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив с телевизором в интерьере на светлом фоне с мягким светом</h2>
+                    </div>
+                </a>
+                
+                <!-- Креатив 6 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-6.jpg" alt="Креатив с товаром" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Товар</span>
+                                <span class="tag">Промо</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив с товаром на контрастном фоне с акцентной надписью</h2>
+                    </div>
+                </a>
+                
+                <!-- Креатив 7 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-7.jpg" alt="Креатив с фоном" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Фон</span>
+                                <span class="tag">Абстракция</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив с абстрактным фоном и градиентной заливкой</h2>
+                    </div>
+                </a>
+                
+                <!-- Креатив 8 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-8.jpg" alt="Креатив с бейджем" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Бейдж</span>
+                                <span class="tag">Скидка</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив со скидочным бейджем и акцентной типографикой</h2>
+                    </div>
+                </a>
+
+                <!-- Креатив 8 -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-8.jpg" alt="Креатив с бейджем" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Бейдж</span>
+                                <span class="tag">Скидка</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив со скидочным бейджем и акцентной типографикой</h2>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Секция фотографий -->
+        <section id="sectionPhotos" class="content-body" style="display: none;">
+            <div class="template-search-controls">
+                <div role="search" class="search-field">
+                    <input class="search-input" type="search" placeholder="Поиск по фотографиям" aria-label="Search photos">
+                    <button aria-label="Search" class="search-button">
+                        <img src="assets/images/search-icon.png" class="search-icon" alt="Search">
+                    </button>
+                </div>
+                
+                <div class="sort-filter-controls">
+                    <div class="filter-menu">
+                        <button class="filter-button" id="photoTypeButton" aria-haspopup="true" aria-expanded="false">
+                            <span class="filter-text">Категория</span>
+                            <img src="assets/images/dropdown-arrow.png" class="filter-icon" alt="Filter">
+                        </button>
+                        <div class="filter-dropdown" id="photoTypeDropdown" hidden>
+                            <button class="filter-option" data-type="Все категории">Все категории</button>
+                            <button class="filter-option" data-type="Бизнес">Бизнес</button>
+                            <button class="filter-option" data-type="Люди">Люди</button>
+                            <button class="filter-option" data-type="Товары">Товары</button>
+                            <button class="filter-option" data-type="Природа">Природа</button>
+                        </div>
+                    </div>
+                    <button class="sort-button">Сортировать</button>
+                </div>
+            </div>
+
+            <div class="photo-grid">
+                <!-- Фото 1 -->
+                <a href="editor/index.html" class="photo-card">
+                    <div class="photo-preview">
+                        <img src="assets/images/photo-1.jpg" alt="Бизнес-встреча" class="preview-image">
+                        <div class="photo-header">
+                            <div class="tag-list">
+                                <span class="tag">Бизнес</span>
+                                <span class="tag">Люди</span>
+                                <span class="tag">Встреча</span>
+                            </div>
+                            <div class="photo-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="photo-title">Сотрудники на деловой встрече за обсуждением графиков и планов</h2>
+                    </div>
+                </a>
+                
+                <!-- Фото 2 -->
+                <a href="editor/index.html" class="photo-card">
+                    <div class="photo-preview">
+                        <img src="assets/images/photo-2.jpg" alt="Товары на витрине" class="preview-image">
+                        <div class="photo-header">
+                            <div class="tag-list">
+                                <span class="tag">Товары</span>
+                                <span class="tag">Магазин</span>
+                            </div>
+                            <div class="photo-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="photo-title">Стильная витрина магазина с товарами и подсветкой</h2>
+                    </div>
+                </a>
+                
+                <!-- Фото 3 -->
+                <a href="editor/index.html" class="photo-card">
+                    <div class="photo-preview">
+                        <img src="assets/images/photo-3.jpg" alt="Природа" class="preview-image">
+                        <div class="photo-header">
+                            <div class="tag-list">
+                                <span class="tag">Природа</span>
+                                <span class="tag">Пейзаж</span>
+                            </div>
+                            <div class="photo-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="photo-title">Живописный пейзаж с горами и озером на рассвете</h2>
+                    </div>
+                </a>
+                
+                <!-- Фото 4 -->
+                <a href="editor/index.html" class="photo-card">
+                    <div class="photo-preview">
+                        <img src="assets/images/photo-4.jpg" alt="Люди на улице" class="preview-image">
+                        <div class="photo-header">
+                            <div class="tag-list">
+                                <span class="tag">Люди</span>
+                                <span class="tag">Город</span>
+                            </div>
+                            <div class="photo-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="photo-title">Люди идут по оживленной городской улице в солнечный день</h2>
+                    </div>
+                </a>
+
+                <!-- Фото 1 -->
+                <a href="editor/index.html" class="photo-card">
+                    <div class="photo-preview">
+                        <img src="assets/images/photo-1.jpg" alt="Бизнес-встреча" class="preview-image">
+                        <div class="photo-header">
+                            <div class="tag-list">
+                                <span class="tag">Бизнес</span>
+                                <span class="tag">Люди</span>
+                                <span class="tag">Встреча</span>
+                            </div>
+                            <div class="photo-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="photo-title">Сотрудники на деловой встрече за обсуждением графиков и планов</h2>
+                    </div>
+                </a>
+                
+                <!-- Фото 2 -->
+                <a href="editor/index.html" class="photo-card">
+                    <div class="photo-preview">
+                        <img src="assets/images/photo-2.jpg" alt="Товары на витрине" class="preview-image">
+                        <div class="photo-header">
+                            <div class="tag-list">
+                                <span class="tag">Товары</span>
+                                <span class="tag">Магазин</span>
+                            </div>
+                            <div class="photo-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="photo-title">Стильная витрина магазина с товарами и подсветкой</h2>
+                    </div>
+                </a>
+                
+                <!-- Фото 3 -->
+                <a href="editor/index.html" class="photo-card">
+                    <div class="photo-preview">
+                        <img src="assets/images/photo-3.jpg" alt="Природа" class="preview-image">
+                        <div class="photo-header">
+                            <div class="tag-list">
+                                <span class="tag">Природа</span>
+                                <span class="tag">Пейзаж</span>
+                            </div>
+                            <div class="photo-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="photo-title">Живописный пейзаж с горами и озером на рассвете</h2>
+                    </div>
+                </a>
+                
+                <!-- Фото 4 -->
+                <a href="editor/index.html" class="photo-card">
+                    <div class="photo-preview">
+                        <img src="assets/images/photo-4.jpg" alt="Люди на улице" class="preview-image">
+                        <div class="photo-header">
+                            <div class="tag-list">
+                                <span class="tag">Люди</span>
+                                <span class="tag">Город</span>
+                            </div>
+                            <div class="photo-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="photo-title">Люди идут по оживленной городской улице в солнечный день</h2>
+                    </div>
+                </a>
+
+                <!-- Фото 1 -->
+                <a href="editor/index.html" class="photo-card">
+                    <div class="photo-preview">
+                        <img src="assets/images/photo-1.jpg" alt="Бизнес-встреча" class="preview-image">
+                        <div class="photo-header">
+                            <div class="tag-list">
+                                <span class="tag">Бизнес</span>
+                                <span class="tag">Люди</span>
+                                <span class="tag">Встреча</span>
+                            </div>
+                            <div class="photo-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="photo-title">Сотрудники на деловой встрече за обсуждением графиков и планов</h2>
+                    </div>
+                </a>
+                
+                <!-- Фото 2 -->
+                <a href="editor/index.html" class="photo-card">
+                    <div class="photo-preview">
+                        <img src="assets/images/photo-2.jpg" alt="Товары на витрине" class="preview-image">
+                        <div class="photo-header">
+                            <div class="tag-list">
+                                <span class="tag">Товары</span>
+                                <span class="tag">Магазин</span>
+                            </div>
+                            <div class="photo-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="photo-title">Стильная витрина магазина с товарами и подсветкой</h2>
+                    </div>
+                </a>
+                
+                <!-- Фото 3 -->
+                <a href="editor/index.html" class="photo-card">
+                    <div class="photo-preview">
+                        <img src="assets/images/photo-3.jpg" alt="Природа" class="preview-image">
+                        <div class="photo-header">
+                            <div class="tag-list">
+                                <span class="tag">Природа</span>
+                                <span class="tag">Пейзаж</span>
+                            </div>
+                            <div class="photo-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="photo-title">Живописный пейзаж с горами и озером на рассвете</h2>
+                    </div>
+                </a>
+                
+                <!-- Фото 4 -->
+                <a href="editor/index.html" class="photo-card">
+                    <div class="photo-preview">
+                        <img src="assets/images/photo-4.jpg" alt="Люди на улице" class="preview-image">
+                        <div class="photo-header">
+                            <div class="tag-list">
+                                <span class="tag">Люди</span>
+                                <span class="tag">Город</span>
+                            </div>
+                            <div class="photo-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="photo-title">Люди идут по оживленной городской улице в солнечный день</h2>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Секция последних шаблонов -->
+        <section id="sectionRecent" class="content-body" style="display: none;">
+            <div class="template-search-controls">
+                <div role="search" class="search-field">
+                    <input class="search-input" type="search" placeholder="Поиск по шаблонам" aria-label="Search recent templates">
+                    <button aria-label="Search" class="search-button">
+                        <img src="assets/images/search-icon.png" class="search-icon" alt="Search">
+                    </button>
+                </div>
+                
+                <div class="sort-filter-controls">
+                    <div class="filter-menu">
+                        <button class="filter-button" id="recentFilterButton" aria-haspopup="true" aria-expanded="false">
+                            <span class="filter-text">Фильтр</span>
+                            <img src="assets/images/dropdown-arrow.png" class="filter-icon" alt="Filter">
+                        </button>
+                        <div class="filter-dropdown" id="recentFilterDropdown" hidden>
+                            <button class="filter-option" data-filter="all">Все шаблоны</button>
+                            <button class="filter-option" data-filter="recent">Недавние</button>
+                            <button class="filter-option" data-filter="popular">Популярные</button>
+                        </div>
+                    </div>
+                    <button class="sort-button">Сортировать</button>
+                </div>
+            </div>
+
+            <div class="recent-grid">
+                <!-- Смешанная сетка с разными типами шаблонов -->
+                <!-- Шаблон размера -->
+                <a href="editor/index.html" class="template-card">
+                    <div class="template-preview" style="background-image: url(assets/images/template-5.jpg);">
+                        <div class="template-header">
+                            <div class="size-tags">
+                                <span class="tag">1440х300</span>
+                            </div>
+                            <div class="template-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="template-title">Растяжка для сайта</h2>
+                    </div>
+                </a>
+                
+                <!-- Креатив -->
+                <a href="editor/index.html" class="creative-card">
+                    <div class="creative-preview">
+                        <img src="assets/images/creative-5.jpg" alt="Креатив для баннера" class="preview-image">
+                        <div class="creative-header">
+                            <div class="tag-list">
+                                <span class="tag">Баннер</span>
+                                <span class="tag">Промо</span>
+                            </div>
+                            <div class="creative-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="creative-title">Креатив для промо-баннера новой коллекции</h2>
+                    </div>
+                </a>
+                
+                <!-- Фото -->
+                <a href="editor/index.html" class="photo-card">
+                    <div class="photo-preview">
+                        <img src="assets/images/photo-5.jpg" alt="Фото продукта" class="preview-image">
+                        <div class="photo-header">
+                            <div class="tag-list">
+                                <span class="tag">Продукт</span>
+                                <span class="tag">Минимализм</span>
+                            </div>
+                            <div class="photo-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="photo-title">Минималистичное фото продукта на светлом фоне</h2>
+                    </div>
+                </a>
+                
+                <!-- Шаблон размера -->
+                <a href="editor/index.html" class="template-card">
+                    <div class="template-preview" style="background-image: url(assets/images/template-6.jpg);">
+                        <div class="template-header">
+                            <div class="size-tags">
+                                <span class="tag">280х300</span>
+                            </div>
+                            <div class="template-actions">
+                                <img src="assets/images/editButton.png" alt="Edit" class="action-button">
+                                <img src="assets/images/likeButton.png" alt="More options" class="action-button">
+                            </div>
+                        </div>
+                        <h2 class="template-title">Карусель товаров</h2>
+                    </div>
+                </a>
+            </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/components/tabs.js"></script>
+    <script src="js/components/dropdown.js"></script>
+    <script src="js/components/templates.js"></script>
+  </body>
+</html>

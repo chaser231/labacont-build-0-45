@@ -1,0 +1,130 @@
+.header-panel {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 8px;
+    margin: 10px;
+    height: var(--header-height);
+    background-color: var(--primary-color);
+    /*box-shadow: var(--shadow);*/
+    z-index: 10;
+    border-radius: 16px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.header-logo img {
+    height: 24px;
+}
+
+.logo-image {
+    height: 24px;
+}
+
+.undo-image, .redo-image {
+    height: 24px;
+}
+
+.select-image, .hand-image, .scale-image, .pen-image, .figures-image, .text-image {
+    height: 20px;
+}
+
+.export-image {
+    height: 24px;
+}
+
+.header-center, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-btn {
+    padding: 12px;
+    border-radius: 16px;
+    background-color: var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+.header-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header-divider {
+    width: 1px;
+    height: 24px;
+    background-color: rgba(168, 168, 168, 0.2);
+    margin: 0 8px;
+}
+
+.tool-controls {
+    background-color: rgba(227, 227, 227, 0.2);
+    border-radius: 16px;
+    padding: 4px;
+    display: flex;
+    gap: 2px;
+}
+
+.tool-btn {
+    padding: 8px;
+    border-radius: 12px;
+    color: var(--text-color);
+}
+.tool-btn.active {
+    background-color: var(--item-hover);
+}
+
+.multi-edit-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.ai-tools-btn {
+    background-color: #EBE0FF;
+    color: var(--text-color);
+    font-weight: 700;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.ai-tools-btn:hover {
+    background-color: rgba(109, 23, 170, 0.3);
+}
+
+.export-btn {
+    display: none;
+}
+
+.save-btn {
+    padding: 10px;
+}
+
+.primary-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 16px;
+}
+
+.primary-btn:hover {
+    background-color: #0062cc;
+}

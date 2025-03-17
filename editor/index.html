@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labacont Editor</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/panels.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/canvas.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Добавляем Fabric.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+</head>
+<body>
+    <div class="editor-container">
+        <!-- Верхняя панель (header) -->
+        <header class="header-panel">
+            <div class="header-left">
+                <button class="header-btn back-btn" title="Вернуться на главную">
+                    <a href="../index.html">
+                    <img src="assets/images/logo.png" alt="Логотип компании" class="logo-image">
+                </a>
+                </button>
+                <div class="header-divider"></div>
+                <button class="header-btn undo-btn" title="Отменить" disabled>
+                    <img src="assets/images/undo.png" alt="Логотип компании" class="undo-image">
+                </button>
+                <button class="header-btn redo-btn" title="Повторить" disabled>
+                    <img src="assets/images/redo.png" alt="Логотип компании" class="undo-image">
+                </button>
+            </div>
+            
+            <div class="header-center tool-controls">
+                <button class="tool-btn active" data-tool="select" title="Выделение">
+                    <img src="assets/images/select.png" alt="Select" class="select-image">
+                </button>
+                <button class="tool-btn" data-tool="hand" title="Рука">
+                    <img src="assets/images/hand.png" alt="Select" class="hand-image">
+                </button>
+                <button class="tool-btn" data-tool="scale" title="Масштаб">
+                    <img src="assets/images/scale.png" alt="Select" class="scale-image">
+                </button>
+                <button class="tool-btn" data-tool="pen" title="Перо">
+                    <img src="assets/images/pen.png" alt="Select" class="pen-image">
+                </button>
+                <button class="tool-btn" data-tool="figures" title="Фигуры">
+                    <img src="assets/images/figures.png" alt="Select" class="figures-image">
+                </button>
+                <button class="tool-btn" data-tool="text" title="Текст">
+                    <img src="assets/images/text.png" alt="Select" class="text-image">
+                </button>
+                <button class="tool-btn" data-tool="grid" title="Сетка">
+                    <span class="material-icons">grid_on</span>
+                </button>
+            </div>
+            
+            <div class="header-right">
+                
+                <div class="header-divider"></div>
+                <div class="multi-edit-toggle">
+                    <span>Мультиредактирование</span>
+                    <label class="switch">
+                        <input type="checkbox" id="multi-edit-checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="header-divider"></div>
+                <button class="header-btn help-btn" title="Помощь">
+                    Помощь
+                    <span class="material-icons">help_outline</span>
+                </button>
+                <button class="header-btn ai-tools-btn" title="ИИ-инструменты">
+                    ИИ-инструменты
+                    <span class="material-icons">auto_fix_high</span>
+                    
+                </button>
+                <button class="header-btn export-btn" title="Экспортировать">
+                    Экспорт
+                    <img src="assets/images/export.png" alt="Select" class="export-image">
+                    
+                </button>
+                <button class="header-btn save-btn primary-btn" title="Сохранить">
+                    Сохранить
+                    <img src="assets/images/export.png" alt="Select" class="export-image">
+                    
+                </button>
+            </div>
+        </header>
+        
+        <!-- Левая боковая панель -->
+        <aside class="sidebar">
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="create">Создать</button>
+                <button class="tab-btn" data-tab="templates">Выбрать шаблон</button>
+            </div>
+            
+           <!-- Вкладка "Создать" -->
+           <div class="tab-content active" id="create-tab">
+            <div class="layout-create" id="create-button">
+            <button class="sidebar-btn" id="create-layout">
+                <img src="assets/images/layout.png" alt="Select" class="layout-image">
+                <span>Макет</span>    
+            </button>
+            <img src="assets/images/addIcon.png" alt="Select" class="add-image">
+            </div>
+            <div class="sidebar-divider"></div>
+            <div class="text-create" id="create-button">
+            <button class="sidebar-btn" id="add-text">
+                <img src="assets/images/text-icon.png" alt="Select" class="textIcon-image">
+                <span>Текст</span>
+            </button>
+            <img src="assets/images/addIcon.png" alt="Select" class="add-image">
+            </div>
+            <div class="sidebar-divider"></div>
+            <div class="photo-create" id="create-button">
+            <button class="sidebar-btn" id="add-photo">
+                <img src="assets/images/photo.png" alt="Select" class="photo-image">
+                <span>Фото</span>
+            </button>
+            <img src="assets/images/addIcon.png" alt="Select" class="add-image">
+            </div>
+            <div class="sidebar-divider"></div>
+            <div class="elements-create" id="create-button">
+            <button class="sidebar-btn" id="add-element">
+                <img src="assets/images/elements.png" alt="Select" class="element-image">
+                <span>Элементы</span>
+            </button>
+            <img src="assets/images/addIcon.png" alt="Select" class="add-image">
+            </div>
+            <div class="sidebar-divider"></div>
+                
+                <div class="element-picker hidden">
+                    <div class="element-item" data-element="rectangle">
+                        <div class="element-preview rectangle"></div>
+                        <span>Прямоугольник</span>
+                    </div>
+                    <div class="element-item" data-element="circle">
+                        <div class="element-preview circle"></div>
+                        <span>Круг</span>
+                    </div>
+                    <div class="element-item" data-element="triangle">
+                        <div class="element-preview triangle"></div>
+                        <span>Треугольник</span>
+                    </div>
+                    <div class="element-item" data-element="line">
+                        <div class="element-preview line"></div>
+                        <span>Линия</span>
+                    </div>
+                    <div class="element-item" data-element="star">
+                        <div class="element-preview star"></div>
+                        <span>Звезда</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вкладка "Выбрать шаблон" -->
+            <div class="tab-content" id="templates-tab">
+                <div class="search-container">
+                    <input type="text" placeholder="Поиск шаблонов" class="search-input">
+                    <span class="material-icons search-icon">search</span>
+                </div>
+                
+                <div class="template-categories">
+
+                    <div class="category-item">
+                        <div class="category-header">
+                            <span>Яндекс Маркет</span>
+                            <span class="material-icons">expand_more</span>
+                        </div>
+                        <div class="category-content hidden">
+                            <div class="template-item">Яндекс Маркет: Баннер</div>
+                            <div class="template-item">Яндекс Маркет: Карточка товара</div>
+                            <div class="template-item">Яндекс Маркет: Рич-контент</div>
+                        </div>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="category-header">
+                            <span>Размеры</span>
+                            <span class="material-icons">expand_more</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="template-item" data-size="1080x1080">Instagram пост (1080×1080)</div>
+                            <div class="template-item" data-size="1080x1920">Instagram история (1080×1920)</div>
+                            <div class="template-item" data-size="1200x628">Facebook пост (1200×628)</div>
+                            <div class="template-item" data-size="1500x500">Twitter обложка (1500×500)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-header">
+                            <span>Креативы</span>
+                            <span class="material-icons">expand_more</span>
+                        </div>
+                        <div class="category-content hidden">
+                            <div class="template-item">Баннер для рекламы</div>
+                            <div class="template-item">Карточка товара</div>
+                            <div class="template-item">Приглашение</div>
+                            <div class="template-item">Презентация</div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-header">
+                            <span>Фото</span>
+                            <span class="material-icons">expand_more</span>
+                        </div>
+                        <div class="category-content hidden">
+                            <div class="template-item">Коллаж</div>
+                            <div class="template-item">Фоторамка</div>
+                            <div class="template-item">Фотогалерея</div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-header">
+                            <span>Фигуры</span>
+                            <span class="material-icons">expand_more</span>
+                        </div>
+                        <div class="category-content hidden">
+                            <div class="template-item">Геометрические</div>
+                            <div class="template-item">Диаграммы</div>
+                            <div class="template-item">Иконки</div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-header">
+                            <span>Графика</span>
+                            <span class="material-icons">expand_more</span>
+                        </div>
+                        <div class="category-content hidden">
+                            <div class="template-item">Иллюстрации</div>
+                            <div class="template-item">Инфографика</div>
+                            <div class="template-item">Схемы</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Основной канвас редактора -->
+        <main class="canvas-container">
+            <canvas id="editor-canvas"></canvas>
+            
+            <!-- Панель навигации по холсту -->
+            <div class="canvas-navigation">
+                <button class="zoom-out-btn" title="Уменьшить">
+                    <span class="material-icons">remove</span>
+                </button>
+                <div class="zoom-indicator">100%</div>
+                <button class="zoom-in-btn" title="Увеличить">
+                    <span class="material-icons">add</span>
+                </button>
+                <button class="reset-zoom-btn" title="Сбросить масштаб">
+                    <span class="material-icons">fit_screen</span>
+                </button>
+            </div>
+        </main>
+        
+        <!-- Правая панель -->
+        <div class="right-sidebar">
+            <!-- Панель слоев -->
+            <div class="floating-panel layers-panel">
+                <div class="panel-header">
+                    <h3>Слои</h3>
+                    <button class="add-layer-btn" title="Добавить слой">
+                        <span class="material-icons">add</span>
+                    </button>
+                </div>
+                <div class="panel-content layers-list">
+                    <!-- Слои будут добавляться динамически -->
+                </div>
+            </div>
+            
+            <!-- Панель свойств -->
+            <div class="floating-panel properties-panel">
+                <div class="panel-header">
+                    <h3>Свойства</h3>
+                </div>
+                <div class="panel-content properties-content">
+                    <!-- Свойства выбранного элемента будут отображаться здесь -->
+                    <div class="property-group hidden" id="text-properties">
+                        <h4>Текст</h4>
+                        <div class="property-group-content">
+                            <div class="property-row">
+                                <label>Шрифт</label>
+                                <select id="font-family">
+                                    <option value="Arial">Arial</option>
+                                    <option value="Helvetica">Helvetica</option>
+                                    <option value="Times New Roman">Times New Roman</option>
+                                    <option value="Roboto">Roboto</option>
+                                </select>
+                            </div>
+                            <div class="property-row">
+                                <label>Размер</label>
+                                <input type="number" id="font-size" value="16">
+                            </div>
+                            <div class="property-row text-align-controls">
+                                <button class="align-btn" data-align="left" title="По левому краю">
+                                    <span class="material-icons">format_align_left</span>
+                                </button>
+                                <button class="align-btn" data-align="center" title="По центру">
+                                    <span class="material-icons">format_align_center</span>
+                                </button>
+                                <button class="align-btn" data-align="right" title="По правому краю">
+                                    <span class="material-icons">format_align_right</span>
+                                </button>
+                                <button class="align-btn" data-align="justify" title="По ширине">
+                                    <span class="material-icons">format_align_justify</span>
+                                </button>
+                            </div>
+                            <div class="property-row">
+                                <label>Цвет</label>
+                                <input type="color" id="text-color" value="#000000">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="property-group hidden" id="shape-properties">
+                        <h4>Фигура</h4>
+                        <div class="property-group-content">
+                            <div class="property-row">
+                                <label>Заливка</label>
+                                <input type="color" id="fill-color" value="#ffffff">
+                            </div>
+                            <div class="property-row">
+                                <label>Обводка</label>
+                                <input type="color" id="stroke-color" value="#000000">
+                            </div>
+                            <div class="property-row">
+                                <label>Толщина</label>
+                                <input type="number" id="stroke-width" value="1" min="0" max="20">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="property-group hidden" id="image-properties">
+                        <h4>Изображение</h4>
+                        <div class="property-group-content">
+                            <div class="property-row">
+                                <label>Прозрачность</label>
+                                <input type="range" id="image-opacity" min="0" max="1" step="0.1" value="1">
+                            </div>
+                            <div class="property-row">
+                                <button class="property-btn" id="crop-image">
+                                    <span class="material-icons">crop</span>
+                                    <span>Обрезать</span>
+                                </button>
+                            </div>
+                            <div class="property-row">
+                                <button class="property-btn" id="remove-bg">
+                                    <span class="material-icons">auto_fix_high</span>
+                                    <span>Удалить фон</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="property-group" id="position-properties">
+                        <h4>Позиция и размер</h4>
+                        <div class="property-group-content">
+                            <div class="property-row">
+                                <label>X</label>
+                                <input type="number" id="position-x" value="0">
+                            </div>
+                            <div class="property-row">
+                                <label>Y</label>
+                                <input type="number" id="position-y" value="0">
+                            </div>
+                            <div class="property-row">
+                                <label>Ширина</label>
+                                <input type="number" id="size-width" value="100">
+                            </div>
+                            <div class="property-row">
+                                <label>Высота</label>
+                                <input type="number" id="size-height" value="100">
+                            </div>
+                            <div class="property-row">
+                                <label>Поворот</label>
+                                <input type="number" id="rotation" value="0" min="-360" max="360">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Панель выравнивания -->
+                    <div class="alignment-panel">
+                        <button title="Выровнять по левому краю" data-align="left">
+                            <span class="material-icons">format_align_left</span>
+                        </button>
+                        <button title="Выровнять по центру горизонтально" data-align="center-h">
+                            <span class="material-icons">format_align_center</span>
+                        </button>
+                        <button title="Выровнять по правому краю" data-align="right">
+                            <span class="material-icons">format_align_right</span>
+                        </button>
+                        <button title="Выровнять по верхнему краю" data-align="top">
+                            <span class="material-icons">vertical_align_top</span>
+                        </button>
+                        <button title="Выровнять по центру вертикально" data-align="center-v">
+                            <span class="material-icons">vertical_align_center</span>
+                        </button>
+                        <button title="Выровнять по нижнему краю" data-align="bottom">
+                            <span class="material-icons">vertical_align_bottom</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI Tools Modal -->
+        <div class="modal" id="ai-tools-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>ИИ-инструменты</h2>
+                    <button class="close-modal">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="ai-tool-item">
+                        <div class="ai-tool-icon">
+                            <span class="material-icons">image_search</span>
+                        </div>
+                        <div class="ai-tool-details">
+                            <h3>Генерация фото по запросу</h3>
+                            <p>Создайте уникальные изображения на основе текстового описания</p>
+                            <input type="text" placeholder="Опишите желаемое изображение" class="ai-input">
+                            <button class="generate-btn">Сгенерировать</button>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-tool-item">
+                        <div class="ai-tool-icon">
+                            <span class="material-icons">hide_image</span>
+                        </div>
+                        <div class="ai-tool-details">
+                            <h3>Удаление фона</h3>
+                            <p>Автоматически удалите фон с выбранного изображения</p>
+                            <button class="ai-tool-btn" id="remove-background-btn">Применить к выбранному</button>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-tool-item">
+                        <div class="ai-tool-icon">
+                            <span class="material-icons">photo_size_select_large</span>
+                        </div>
+                        <div class="ai-tool-details">
+                            <h3>Расширение фото</h3>
+                            <p>Расширяйте изображения за их исходными границами</p>
+                            <button class="ai-tool-btn" id="expand-image-btn">Применить к выбранному</button>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-tool-item">
+                        <div class="ai-tool-icon">
+                            <span class="material-icons">format_paint</span>
+                        </div>
+                        <div class="ai-tool-details">
+                            <h3>Генеративная заливка</h3>
+                            <p>Создавайте уникальные текстуры и заливки для объектов</p>
+                            <input type="text" placeholder="Опишите желаемую текстуру" class="ai-input">
+                            <button class="ai-tool-btn" id="generative-fill-btn">Применить к выбранному</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Create Layout Modal -->
+        <div class="modal" id="create-layout-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Создать макет</h2>
+                    <button class="close-modal">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="layout-sizes">
+                        <div class="layout-size-item" data-width="1080" data-height="1080">
+                            <div class="layout-preview square"></div>
+                            <span>Квадрат 1080×1080</span>
+                        </div>
+                        <div class="layout-size-item" data-width="1080" data-height="1920">
+                            <div class="layout-preview portrait"></div>
+                            <span>Портрет 1080×1920</span>
+                        </div>
+                        <div class="layout-size-item" data-width="1200" data-height="628">
+                            <div class="layout-preview landscape"></div>
+                            <span>Ландшафт 1200×628</span>
+                        </div>
+                    </div>
+                    
+                    <div class="custom-size">
+                        <h3>Пользовательский размер</h3>
+                        <div class="size-inputs">
+                            <div class="size-input-group">
+                                <label>Ширина (px)</label>
+                                <input type="number" id="custom-width" value="800" min="1">
+                            </div>
+                            <div class="size-input-group">
+                                <label>Высота (px)</label>
+                                <input type="number" id="custom-height" value="600" min="1">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="create-layout-btn">Создать макет</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Контекстное меню -->
+        <div class="context-menu" id="context-menu">
+            <div class="context-menu-item" data-action="copy">
+                <span class="material-icons">content_copy</span>
+                <span>Копировать</span>
+            </div>
+            <div class="context-menu-item" data-action="paste">
+                <span class="material-icons">content_paste</span>
+                <span>Вставить</span>
+            </div>
+            <div class="context-menu-item" data-action="duplicate">
+                <span class="material-icons">file_copy</span>
+                <span>Дублировать</span>
+            </div>
+            <div class="context-menu-item" data-action="group">
+                <span class="material-icons">group_work</span>
+                <span>Группировать</span>
+            </div>
+            <div class="context-menu-item" data-action="ungroup">
+                <span class="material-icons">ungroup</span>
+                <span>Разгруппировать</span>
+            </div>
+            <div class="context-menu-item delete" data-action="delete">
+                <span class="material-icons">delete</span>
+                <span>Удалить</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/app.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/layers.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/properties.js"></script>
+    <script src="js/ai-tools.js"></script>
+    <script src="js/canvas-navigation.js"></script>
+    <script src="js/multi-edit-feature.js"></script>
+    <script src="js/advanced-object-management.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+/* Поля ввода */
+.input-container {
+    position: relative;
+    margin-bottom: var(--spacing-md);
+}
+
+.input-text {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-md);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+}
+
+.edit-input {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-md);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    outline: none;
+}
+
+/* Чекбоксы */
+.checkbox-container {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-toggle {
+    width: 40px;
+    height: 24px;
+    background-color: var(--color-surface);
+    border-radius: 12px;
+    position: relative;
+    transition: background-color var(--transition-normal);
+}
+
+.checkbox-toggle::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-background);
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform var(--transition-normal);
+}
+
+.checkbox-toggle.active {
+    background-color: var(--color-accent);
+}
+
+.checkbox-toggle.active::before {
+    transform: translateX(16px);
+}
+
+/* Группы полей */
+.settings-row {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.setting-title {
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.setting-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Поле поиска */
+.search-field {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-input {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    padding-left: calc(var(--spacing-md) * 2 + 20px);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-md);
+    color: var(--color-text-primary);
+}
+
+.search-button {
+    position: absolute;
+    left: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-secondary);
+}
+
+/* Состояния полей */
+.input-text:focus,
+.edit-input:focus,
+.search-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.1);
+}
+
+.input-text:disabled,
+.edit-input:disabled,
+.search-input:disabled {
+    background-color: var(--color-surface);
+    color: var(--color-text-disabled);
+    cursor: not-allowed;
+}
+
+/* Сообщения об ошибках */
+.error-message {
+    color: #FF3B30;
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-xs);
+} 

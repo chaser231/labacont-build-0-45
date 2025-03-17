@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Обучение</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <script type="module" src="js/script.js"></script>
+    <link rel="stylesheet" href="css/tutorials.css" />
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+  </head>
+  <body>
+    <div class="tutorials">
+      <!-- Боковое меню -->
+      <aside class="sidebar">
+        <div class="sidebar-content">
+            <img src="assets/images/logo.png" alt="Company logo" class="logo">
+            
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <img src="assets/images/home.png" alt="Home icon">
+                    <span>Главная</span>
+                </a>
+                <a href="template.html" class="nav-item">
+                    <img src="assets/images/icon-template.png" alt="Templates icon">
+                    <span>Шаблоны</span>
+                </a>
+                <a href="projects-library.html" class="nav-item">
+                    <img src="assets/images/icon-projects.png" alt="Projects icon">
+                    <span>Проекты</span>
+                </a>
+                <a href="analytics.html" class="nav-item">
+                    <img src="assets/images/icon-analytics.png" alt="Analytics icon">
+                    <span>Аналитика</span>
+                </a>
+                <a href="tutorials.html" class="nav-item active">
+                    <img src="assets/images/icon-tutorial.png" alt="Learning icon">
+                    <span>Обучение</span>
+                </a>
+            </nav>
+            
+            <div class="help-button">
+                <img src="assets/images/icon-help.png" alt="Help icon">
+                <span>Помощь</span>
+            </div>
+        </div>
+    </aside>
+      <main class="main-content">
+        <!-- Верхняя панель -->
+        <header class="top-bar">
+          <a href="editor/index.html" class="create-button">
+              <span>Создать новый дизайн</span>
+              <img src="assets/images/icon-add.png" alt="Create new design icon">
+          </a>
+          
+          <div class="user-controls">
+              <a href="settings-dashboard.html" class="tariff-button">
+                  <span>Тарифный план</span>
+                  <img src="assets/images/icon-premium.png" alt="Tariff plan icon">
+              </a>
+              
+              <div class="user-profile">
+                  <button class="profile-button" aria-haspopup="true" data-el="button-1">
+                      <img src="assets/images/avatar.png" alt="User profile">
+                  </button>
+                  <template data-el="show">
+                      <div class="profile-dropdown">
+                          <a href="settings-dashboard.html">
+                              <button class="dropdown-item">Настройки</button>
+                          </a>
+                          <a href="settings-dashboard.html">
+                              <button class="dropdown-item border-top">Выход из аккаунта</button>
+                          </a>
+                      </div>
+                  </template>
+              </div>
+          </div>
+      </header>
+
+        <h1 class="page-header">Обучение</h1>
+
+        <nav class="filter-tabs" aria-label="Категории обучения">
+          <button class="filter-button active">Первые шаги</button>
+          <button class="filter-button">Дизайн баннеров</button>
+          <button class="filter-button">ИИ-инструменты</button>
+          <button class="filter-button">Советы экспертов</button>
+        </nav>
+
+        <section class="tutorial-cards-row">
+          <article class="tutorial-card">
+            <a
+              href="tutorial.html"
+              class="card-link"
+            >
+              <div class="photo-placeholder photo-purple">
+                <img
+                  src="assets/images/tutorial-preview01.png"
+                  class="card-image"
+                  alt="Первый урок"
+                />
+              </div>
+              <div class="text-container">
+                <div class="card-content">
+                  <h2 class="card-title">Самый первый и важный урок</h2>
+                  <p class="card-description">
+                    Введение в работу с приложением и создание своего первого
+                    дизайна с последующим экспортом файла
+                  </p>
+                </div>
+                <p class="card-caption">Статья и видео • 7 минут</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="tutorial-card">
+            <a
+              href="tutorial.html"
+              class="card-link"
+            >
+              <div class="photo-placeholder photo-orange">
+                <img
+                  src="assets/images/tutorial-preview02.png"
+                  class="card-image"
+                  alt="Инструменты редактора"
+                />
+              </div>
+              <div class="text-container">
+                <div class="card-content">
+                  <h2 class="card-title">Инструменты редактора дизайна</h2>
+                  <p class="card-description">
+                    Полное объяснение и подробные инструкции по использованию
+                    инструментов редакторадизайна с пошаговыми мануалами
+                  </p>
+                </div>
+                <p class="card-caption">Статья и видео • 30 минут</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="tutorial-card">
+            <a
+              href="tutorial.html"
+              class="card-link"
+            >
+              <div class="photo-placeholder photo-red">
+                <img
+                  src="assets/images/tutorial-preview03.png"
+                  class="card-image"
+                  alt="Как вставить изображение"
+                />
+              </div>
+              <div class="text-container">
+                <div class="card-content">
+                  <h2 class="card-title">Как вставить свое изображение</h2>
+                  <p class="card-description">
+                    Загружайте собственный контент для использования в своих
+                    уникальных проектах и файлах
+                  </p>
+                </div>
+                <p class="card-caption">Статья и видео • 30 минут</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="tutorial-card">
+            <a
+              href="tutorial.html"
+              class="card-link"
+            >
+              <div class="photo-placeholder photo-blue">
+                <img
+                  src="assets/images/tutorial-preview04.png"
+                  class="card-image"
+                  alt="Гайд по баннерам"
+                />
+              </div>
+              <div class="text-container">
+                <div class="card-content">
+                  <h2 class="card-title">Гайд по баннерам Яндекс Маркета</h2>
+                  <p class="card-description">
+                    Объясняем, как работать с рекламными форматами на Яндекс
+                    Маркете в рамках корпоративной айдентики
+                  </p>
+                </div>
+                <p class="card-caption">Статья и видео • 7 минут</p>
+              </div>
+            </a>
+          </article>
+        </section>
+
+        <section class="tutorial-cards-row">
+          <article class="tutorial-card">
+            <a
+              href="tutorial.html"
+              class="card-link"
+            >
+              <div class="photo-placeholder photo-purple">
+                <img
+                  src="assets/images/tutorial-preview02.png"
+                  class="card-image"
+                  alt="Как добавить размеры"
+                />
+              </div>
+              <div class="text-container">
+                <div class="card-content">
+                  <h2 class="card-title">Как добавить несколько размеров</h2>
+                  <p class="card-description">
+                    Используйте по максимуму возможности мультиредактирования
+                    макетов, чтобы делать свой дизайн для нескольких площадок
+                    сразу
+                  </p>
+                </div>
+                <p class="card-caption">Статья и видео • 7 минут</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="tutorial-card">
+            <a
+              href="tutorial.html"
+              class="card-link"
+            >
+              <div class="photo-placeholder photo-orange">
+                <img
+                  src="assets/images/tutorial-preview01.png"
+                  class="card-image"
+                  alt="Как удалить фон"
+                />
+              </div>
+              <div class="text-container">
+                <div class="card-content">
+                  <h2 class="card-title">Как удалить фон на изображении</h2>
+                  <p class="card-description">
+                    Научитесь удалять любые фоны с ваших или стоковых
+                    изображений буквально в несколько простых действий
+                  </p>
+                </div>
+                <p class="card-caption">Статья и видео • 30 минут</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="tutorial-card">
+            <a
+              href="tutorial.html"
+              class="card-link"
+            >
+              <div class="photo-placeholder photo-red">
+                <img
+                  src="assets/images/tutorial-preview04.png"
+                  class="card-image"
+                  alt="Как экспортировать файлы"
+                />
+              </div>
+              <div class="text-container">
+                <div class="card-content">
+                  <h2 class="card-title">Как экспортировать свои файлы</h2>
+                  <p class="card-description">
+                    В этом уроке даём советы о том, как подготовить свои файлы
+                    для экспорта и как загружать их в вашем кабинете
+                  </p>
+                </div>
+                <p class="card-caption">Статья и видео • 30 минут</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="tutorial-card">
+            <a
+              href="tutorial.html"
+              class="card-link"
+            >
+              <div class="photo-placeholder photo-blue">
+                <img
+                  src="assets/images/tutorial-preview01.png"
+                  class="card-image"
+                  alt="Как работать с шаблонами"
+                />
+              </div>
+              <div class="text-container">
+                <div class="card-content">
+                  <h2 class="card-title">Как работать с шаблонами</h2>
+                  <p class="card-description">
+                    Объясняем, на что нужно обратить внимание в первую очередь
+                    при работе с библиотекой шаблонов и банком контента
+                  </p>
+                </div>
+                <p class="card-caption">Статья и видео • 7 минут</p>
+              </div>
+            </a>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // State management
+        const state = {
+          searchText: "",
+          isFilterOpen: false,
+          selectedFilters: [],
+          viewMode: "rows",
+        };
+
+        // DOM elements
+        const filterButton = document.getElementById("filterButton");
+        const filterDropdown = document.getElementById("filterDropdown");
+        const filterOptions = document.querySelectorAll(".filter-option");
+        const searchInput = document.querySelector(".search-input");
+        const searchButton = document.querySelector(".search-button");
+        const viewButtons = document.querySelectorAll(".view-button");
+        const projectRows = document.querySelector(".project-rows");
+        const tilesBlock = document.querySelector(".tiles-block");
+
+        // Профиль пользователя
+        const profileButton = document.querySelector('[data-el="button-1"]');
+        if (profileButton) {
+            profileButton.addEventListener('click', toggleDropdown);
+            profileButton.addEventListener('keydown', handleDropdownKeyDown);
+        }
+        
+        // Функция для переключения состояния выпадающего меню
+        function toggleDropdown() {
+        state.isDropdownOpen = !state.isDropdownOpen;
+        updateDropdown();
+    }
+
+    // Обработка клавиатурных событий для выпадающего меню
+    function handleDropdownKeyDown(event) {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggleDropdown();
+        }
+    }
+
+    // Обновление состояния выпадающего меню профиля
+    function updateDropdown() {
+        const template = document.querySelector('[data-el="show"]');
+        if (!template) return;
+
+        // Удаляем предыдущий дропдаун, если он есть
+        const existingDropdown = document.querySelector('.profile-dropdown');
+        if (existingDropdown) {
+            existingDropdown.remove();
+        }
+
+        // Показываем новый дропдаун, если нужно
+        if (state.isDropdownOpen) {
+            const dropdown = template.content.cloneNode(true);
+            template.after(dropdown);
+
+            // Добавляем обработчики для пунктов меню
+            document.querySelectorAll('.dropdown-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    if (item.innerText === 'Настройки') {
+                        // Переход на страницу настроек
+                        console.log('Переход на настройки');
+                    } else if (item.innerText === 'Выход из аккаунта') {
+                        // Выход из аккаунта
+                        console.log('Выход из аккаунта');
+                    }
+                    toggleDropdown();
+                });
+            });
+
+            // Закрытие дропдауна при клике вне него
+            document.addEventListener('click', closeDropdownOutside);
+        }
+
+        // Обновляем атрибут aria-expanded
+        profileButton.setAttribute('aria-expanded', state.isDropdownOpen);
+    }
+
+    // Закрытие дропдауна при клике вне его области
+    function closeDropdownOutside(event) {
+        if (!profileButton.contains(event.target) && 
+            !document.querySelector('.profile-dropdown')?.contains(event.target)) {
+            state.isDropdownOpen = false;
+            updateDropdown();
+            document.removeEventListener('click', closeDropdownOutside);
+        }
+    }
+
+        // Handle view mode switching
+        viewButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            viewButtons.forEach((btn) => btn.classList.remove("active-view"));
+            this.classList.add("active-view");
+
+            if (this.classList.contains("grid-view")) {
+              state.viewMode = "rows";
+              projectRows.hidden = false;
+              tilesBlock.hidden = true;
+            } else {
+              state.viewMode = "tiles";
+              projectRows.hidden = true;
+              tilesBlock.hidden = false;
+            }
+          });
+        });
+
+        // Close filter dropdown when clicking outside
+        document.addEventListener("click", function (e) {
+          if (state.isFilterOpen && !e.target.closest(".filter-menu")) {
+            state.isFilterOpen = false;
+            filterDropdown.hidden = true;
+            filterButton.setAttribute("aria-expanded", false);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

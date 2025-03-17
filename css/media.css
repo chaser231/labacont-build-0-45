@@ -1,0 +1,149 @@
+/* Планшеты */
+@media (max-width: 991px) {
+    .control-panel {
+        width: 100%;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .help-button {
+        padding: 0.75rem;
+    }
+
+    .main-content {
+        margin-left: 90px;
+    }
+
+    .create-button {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .templates-categories {
+        display: none;
+    }
+
+    .mobile-categories {
+        display: flex;
+    }
+
+    .tariff-button {
+        padding: 0.25rem 1rem;
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .content-body {
+        gap: 1rem;
+    }
+
+    .template-search-controls {
+        flex-direction: column;
+    }
+
+    .filter-tabs {
+        overflow-x: auto;
+    }
+
+    .search-field {
+        width: 100%;
+    }
+
+    .sort-filter-controls {
+        width: 100%;
+    }
+
+    .template-title {
+        font-size: 0.875rem;
+    }
+
+    .creative-card, .photo-card {
+        width: calc(50% - 0.5rem);
+    }
+
+    .recent-grid > a, .mixed-grid > a {
+        width: calc(50% - 0.5rem);
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 640px) {
+    .sidebar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        top: auto;
+        width: 100%;
+        height: auto;
+        border-radius: 1rem 1rem 0 0;
+        padding: 0.5rem 1rem;
+    }
+
+    .sidebar-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .nav-item {
+        padding: 0.5rem;
+    }
+
+    .nav-item span {
+        display: none;
+    }
+
+    .help-button {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-bottom: 70px;
+    }
+
+    .mobile-categories {
+        flex-wrap: wrap;
+    }
+
+    .user-controls {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .template-row {
+        flex-direction: column;
+    }
+
+    .template-preview {
+        width: 100%;
+    }
+
+    .template-preview-large {
+        width: 100%;
+    }
+
+    .creative-card, .photo-card {
+        width: 100%;
+    }
+
+    .recent-grid > a, .mixed-grid > a {
+        width: 100%;
+    }
+
+    .search-field {
+        padding: 0.5rem;
+    }
+
+    .filter-button, .sort-button {
+        padding: 0.5rem;
+    }
+} 

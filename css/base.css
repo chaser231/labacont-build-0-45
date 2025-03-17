@@ -1,0 +1,52 @@
+/* Импорт шрифтов */
+@import url('../assets/fonts/fonts.css');
+
+/* Переменные */
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #FFFFFF;
+    --accent-color: #FFDB4A;
+    --canvas-bg: #e0e0e0;
+    --text-color: #414141;
+    --text-secondary: #414141;
+    --border-color: #ededed;
+    --item-hover: #e0e0e0;
+    --right-panel-width: 300px;
+    --header-height: 56px;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s ease;
+    --panel-radius: 16px;
+    --font-primary: 'YS Text', 'Arial', sans-serif;
+    --font-secondary: 'YS Text', 'Arial', sans-serif;
+    --font-h1: 'YS Text Cond', 'Arial', sans-serif;
+}
+
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary), var(--font-secondary), var(--font-h1);
+    background-color: #f4f4f5;
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+input::placeholder {
+    color: var(--text-color);
+    opacity: 1;
+}

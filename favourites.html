@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Избранное</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/favourites.css" />
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/dropdowns.css">
+    <script type="module" src="js/script.js"></script>
+  </head>
+  <body>
+    <div class="projects-library">
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <img src="assets/images/logo.png" alt="Company logo" class="logo">
+                
+                <nav class="sidebar-nav">
+                    <a href="index.html" class="nav-item">
+                        <img src="assets/images/home.png" alt="Home icon">
+                        <span>Главная</span>
+                    </a>
+                    <a href="template.html" class="nav-item">
+                        <img src="assets/images/icon-template.png" alt="Templates icon">
+                        <span>Шаблоны</span>
+                    </a>
+                    <a href="projects-library.html" class="nav-item active">
+                        <img src="assets/images/icon-projects.png" alt="Projects icon">
+                        <span>Проекты</span>
+                    </a>
+                    <a href="analytics.html" class="nav-item">
+                        <img src="assets/images/icon-analytics.png" alt="Analytics icon">
+                        <span>Аналитика</span>
+                    </a>
+                    <a href="tutorials.html" class="nav-item">
+                        <img src="assets/images/icon-tutorial.png" alt="Learning icon">
+                        <span>Обучение</span>
+                    </a>
+                </nav>
+                
+                <div class="help-button">
+                    <img src="assets/images/icon-help.png" alt="Help icon">
+                    <span>Помощь</span>
+                </div>
+            </div>
+        </aside>
+          <main class="main-content">
+            <!-- Верхняя панель -->
+            <header class="top-bar">
+                <a href="editor/index.html" class="create-button">
+                    <span>Создать новый дизайн</span>
+                    <img src="assets/images/icon-add.png" alt="Create new design icon">
+                </a>
+                
+                <div class="projects-categories">
+                    <a href="projects-library.html" class="favourites-tab">Проекты</a>
+                    <div class="projects-tab active-tab">Избранные шаблоны</div>
+                    
+                </div>
+    
+                <div class="user-controls">
+                    <a href="settings-dashboard.html" class="tariff-button">
+                        <span>Тарифный план</span>
+                        <img src="assets/images/icon-premium.png" alt="Tariff plan icon">
+                    </a>
+    
+                    <div class="user-profile">
+                        <button class="profile-button" aria-haspopup="true" data-el="button-1">
+                            <img src="assets/images/avatar.png" alt="User profile">
+                        </button>
+                        <template data-el="show">
+                            <div class="profile-dropdown">
+                            <a href="settings-dashboard.html">
+                                <button class="dropdown-item">Настройки</button>
+                            </a>
+                                <button class="dropdown-item border-top">Выход из аккаунта</button>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </header>
+
+        <section class="favorites-section">
+          <h1 class="section-title">Избранное</h1>
+
+          <div class="search-controls">
+            <div role="search" class="search-field">
+              <input
+                type="search"
+                placeholder="Поиск по проектам"
+                class="search-input"
+                aria-label="Поиск по проектам"
+              />
+              <button aria-label="Search" class="search-button">
+                <img
+                  src="assets/images/search-icon.png"
+                  class="search-icon"
+                  alt=""
+                />
+              </button>
+            </div>
+
+            <div class="filter-controls">
+              <div class="filter-menu">
+                <button
+                  class="filter-button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <span class="filter-text">фильтрация</span>
+                  <img
+                    src="assets/images/filter-icon.png"
+                    class="filter-icon"
+                    alt=""
+                  />
+                </button>
+                <div class="filter-dropdown" hidden>
+                  <button class="filter-option">Недавние</button>
+                  <button class="filter-option">По дате</button>
+                  <button class="filter-option">По названию</button>
+                  <button class="filter-option">По размеру</button>
+                  <button class="filter-option">По типу</button>
+                </div>
+              </div>
+              <button class="sort-button">Сортировать</button>
+            </div>
+          </div>
+
+          <p class="empty-message">
+            Вы пока не добавили в избранное ни одного шаблона
+          </p>
+
+          <a href="editor/index.html" class="create-button">
+            <span>Перейти в библиотеку шаблонов</span>
+            <img src="assets/images/arrow.png" alt="Create new design icon">
+        </a>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      
+
+      
+    </script>
+    <script src="js/components/tabs.js"></script>
+    <script src="js/components/dropdown.js"></script>
+    <script src="js/components/search-filters.js"></script>
+  </body>
+</html>

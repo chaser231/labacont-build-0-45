@@ -1,0 +1,63 @@
+.canvas-container {
+    grid-area: canvas;
+    background-color: var(--canvas-bg);
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    position: relative;
+    overflow: auto;
+}
+
+/* Fabric.js добавляет свой canvas-container, нужно стилизовать его */
+.canvas-container {
+    margin: 0;
+}
+
+/* Убираем границы у canvas */
+canvas#editor-canvas {
+    border: none !important;
+}
+
+/* Панель навигации по холсту */
+.canvas-navigation {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 16px;
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+    box-shadow: var(--shadow);
+    z-index: 100;
+}
+
+.canvas-navigation button {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    padding: 0;
+}
+
+.canvas-navigation button:hover {
+    background-color: var(--item-hover);
+}
+
+.zoom-indicator {
+    width: 60px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 14px;
+}
